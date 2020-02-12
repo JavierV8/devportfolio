@@ -5,7 +5,7 @@ import BasePage from '../components/shared/BasePage';
 const Cv = () => {
     return (
         <BaseLayout auth={props.auth} className="cover">
-          <BasePage title='Get my CV' className="cv-page">
+          <BasePage className="CV-page" title="Get my CV">
           </BasePage>
         </BaseLayout>
     )

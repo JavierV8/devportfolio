@@ -6,7 +6,7 @@ class Login extends Component {
     render () {
         return (
             <BaseLayout auth={auth} className="cover">
-                <BasePage>
+                <BasePage className="login-page" title="Login">
                 </BasePage>
             </BaseLayout>
         )

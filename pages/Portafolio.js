@@ -8,7 +8,7 @@ class Portfolio extends React.Component {
    
     return (
       <BaseLayout auth={this.props.auth} className="cover">
-      <BasePage className="portfolio-page" title="Portfolios">
+      <BasePage className="portfolio-page" title="Portfolio">
       </BasePage>
     </BaseLayout>
     )

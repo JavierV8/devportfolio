@@ -5,7 +5,7 @@ import BasePage from '../components/shared/BasePage';
 const Skills = () => {
   return (
     <BaseLayout auth={auth} className="cover">
-      <BasePage>
+      <BasePage className="skills-page" title="Skills">
       </BasePage>
     </BaseLayout>
   );
