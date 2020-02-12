@@ -3,8 +3,9 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/shared/BasePage';
 
 const Cv = () => {
+    const { auth } = props;
     return (
-        <BaseLayout auth={props.auth} className="cover">
+        <BaseLayout auth={auth} className="cover">
           <BasePage className="CV-page" title="Get my CV">
           </BasePage>
         </BaseLayout>
