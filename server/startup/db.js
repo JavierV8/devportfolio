@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
-const config = require("config");
 
-module.exports = function() {
-  //const db = "";//config.get('db');
-  const db = "mongodb://localhost/portfolio";
+module.exports = function () {
+  const db = "mongodb://localhost/vidly";
   mongoose
     .connect(db, { useCreateIndex: true, useNewUrlParser: true })
-    .then(() => console.log("conectado"));
+    .then(() => console.log("MongoDB is conected!"));
 };

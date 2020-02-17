@@ -2,11 +2,11 @@
 const express = require('express');
 const router = express.Router();
 const { Portafolio, validate } = require('../models/portafolio');
-const { User } = require('../models/user');
 const auth = require('../middleware/auth');
 const { ObjectId } = require('mongodb');
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 

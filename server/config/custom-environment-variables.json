@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "",
-  "db": "portfolio"
+  "jwtPrivateKey": "process.env.API_KEY",
+  "db": "vidly_db"
 }

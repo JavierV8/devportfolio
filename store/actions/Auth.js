@@ -26,7 +26,6 @@ export const authError = (error) => {
 }
 
 export const logOut = () => {
-  console.log("ABCD")
   Cookies.remove('token', { path: '' });
   return {
     type: actionType.AUTH_LOGOUT
@@ -35,7 +34,6 @@ export const logOut = () => {
 
 export const auth = (password, name, isSignup) => {
   return dispatch => {
-    console.log("primero")
     dispatch(authStart());
     let authData = null;
     isSignup ? authData = {
@@ -51,12 +49,12 @@ export const auth = (password, name, isSignup) => {
     isSignup ? url = 'http://localhost:4000/api/users' : url = 'http://localhost:4000/api/auth';
     axios.post(url, authData)
       .then(response => {
-        console.log(response.data)
         let name = response.data.name;
         let id = response.data._id;
         let isAdmin = response.data.isAdmin;
-        let token = Object.entries(response.headers)[2];
-        token = token[1];
+        //let token = Object.entries(response.headers)[2];
+        //token = token[1];
+        const token = response.headers.x_auth_token;
         Cookies.set('token', token);
         dispatch(authSuccess(token, id, name, isAdmin));
       })
@@ -114,4 +112,3 @@ export const serverAuth = (req) => {
     }
   }
 }
-

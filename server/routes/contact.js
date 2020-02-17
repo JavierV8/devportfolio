@@ -4,12 +4,13 @@ const router = express.Router();
 var nodemailer = require('nodemailer');
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: '',
-            pass: ''
+            user: 'javier.san.desarollo@gmail.com',
+            pass: 'a6G23f@msHU%23'
         },
         tls: {
             rejectUnauthorized: false
@@ -18,8 +19,8 @@ router.post('/', async (req, res) => {
 
 
     var mailOptions = {
-        from: '',
-        to: '',
+        from: 'javier.san.desarollo@gmail.com',
+        to: 'javier.san.desarollo@gmail.com',
         subject: 'PAGINA WEB!!!',
         text: `
         email: ${req.body.email},
