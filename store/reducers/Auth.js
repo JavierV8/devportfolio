@@ -1,25 +1,25 @@
-import * as actionType from '../actions/actionType';
+import * as actionType from '../actions/actionTypes';
 
 
 const initialState = {
-    token: null,
-    userId: null,
-    isAdmin: null,
-    nombre: null,
-    error: null,
-    loading: false,
-    authRedirectPath: '/'
+  token: null,
+  userId: null,
+  isAdmin: null,
+  nombre: null,
+  error: null,
+  loading: false,
+  authRedirectPath: '/'
 };
 
-const authStart= (state, action) => {
+const authStart = (state, action) => {
   return {
     ...state,
-      error: null,
-      loading: true
+    error: null,
+    loading: true
   }
 }
 
-const authSuccess= (state, action) => {
+const authSuccess = (state, action) => {
   return {
     ...state,
     token: action.idToken,
@@ -32,7 +32,7 @@ const authSuccess= (state, action) => {
 }
 
 
-const authError= (state, action) => {
+const authError = (state, action) => {
   return {
     ...state,
     error: action.error,
@@ -43,7 +43,7 @@ const authError= (state, action) => {
     loading: false
   }
 }
-const authLogOut= (state, action) => {
+const authLogOut = (state, action) => {
   return {
     ...state,
     token: null,
@@ -52,7 +52,7 @@ const authLogOut= (state, action) => {
     nombre: null,
   }
 }
-const reducer= (state=initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.AUTH_START: return authStart(state, action)
     case actionType.AUTH_SUCCESS: return authSuccess(state, action);

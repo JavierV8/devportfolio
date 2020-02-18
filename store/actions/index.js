@@ -5,4 +5,4 @@ export {
     clientAuth,
     serverAuth,
     authSuccess
-} from './AC_Auth';
+} from './Auth';

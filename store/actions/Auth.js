@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as actionType from './actionType';
+import * as actionType from './actionTypes';
 import Cookies from "js-cookie";
 
 export const authStart = () => {
