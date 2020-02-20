@@ -1,4 +1,4 @@
-import React, { } from "react";
+import React, { useState, useEffect } from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import BasePage from "../components/shared/BasePage";
 
@@ -8,11 +8,27 @@ import {
   CarouselControl,
   CarouselIndicators,
 } from 'reactstrap';
-const [activeIndex, setActiveIndex] = useState(0);
-const [animating, setAnimating] = useState(false);
+
+const items = [
+  {
+    title: 'Front-End',
+    images: ["html", "css3", "javaScript", "boostrap", "react", "redux",],
+  },
+  {
+    title: 'Back-end',
+    images: ["nodejs", "express", "webpack", "nextJS", "mysql", "mongoDB"],
+  },
+  {
+    title: 'IOT',
+    images: ["node-red", "arduino", "mqtt", "Modbus", "TCP", "ssh"],
+  }
+];
+
 
 const Skills = props => {
   const { auth } = props;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
   const next = () => {
     if (animating) return;
