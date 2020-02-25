@@ -9,6 +9,7 @@ import {
   CarouselIndicators,
 } from 'reactstrap';
 
+
 const items = [
   {
     title: 'Front-End',
@@ -24,15 +25,70 @@ const items = [
   }
 ];
 
-
 const Skills = props => {
   const { auth } = props;
+  useEffect(() => {
+    window.addEventListener('resize', resizeFunction);
+    return () => {
+      window.removeEventListener('resize', resizeFunction);
+    };
+  }, []);
+
+  const resizeFunction = () => {
+    items.map(item => {
+      item.images.map(elem => {
+        const image = document.getElementById(elem);
+        image.style.transform = `translate(0px, 0px)`;
+      })
+    })
+  }
+
+  const moving = imagenes => {
+    let images = [...imagenes];
+    let randoom1 = null;
+    let randoom2 = null;
+    images.map(image => {
+      randoom1 = image;
+      randoom2 = images[Math.floor(Math.random() * 5) + 0];
+      transform(randoom1, randoom2);
+    });
+  };
+  const transform = (randoom1, randoom2) => {
+    let image1 = document.getElementById(randoom1);
+    let image2 = document.getElementById(randoom2);
+    var transform1 = image1.style.transform;
+    var transform2 = image2.style.transform;
+    let transformLeft1 = 0;
+    let transformTop1 = 0;
+    let transformLeft2 = 0;
+    let transformTop2 = 0;
+    if (transform1 != "") {
+      let numbers = transform1.match(/[+-]?\d+(?:\.\d+)?/g).map(Number);
+      transformLeft1 = numbers[0];
+      transformTop1 = numbers[1];
+    }
+    if (transform2 != "") {
+      let numbers2 = transform2.match(/[+-]?\d+(?:\.\d+)?/g).map(Number);
+      transformLeft2 = numbers2[0];
+      transformTop2 = numbers2[1];
+    }
+    let image1Left = document.getElementById(randoom1).offsetLeft;
+    let image1Top = document.getElementById(randoom1).offsetTop;
+    let image2Left = document.getElementById(randoom2).offsetLeft;
+    let image2Top = document.getElementById(randoom2).offsetTop;
+
+    let result1Left = image2Left - image1Left + transformLeft2;
+    let result1Top = image2Top - image1Top + transformTop2;
+    let result2Left = image1Left - image2Left + transformLeft1;
+    let result2Top = image1Top - image2Top + transformTop1;
+    image1.style.transform = `translate(${result1Left}px, ${result1Top}px)`;
+    image2.style.transform = `translate(${result2Left}px, ${result2Top}px)`;
+  }
+
+  //---------------------------------
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
-  const moving = imagenes => {
-
-  };
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
@@ -89,6 +145,7 @@ const Skills = props => {
       </CarouselItem>
     );
   });
+
   return (
     <BaseLayout auth={auth}>
       <BasePage>
@@ -100,7 +157,7 @@ const Skills = props => {
         </Carousel>
       </BasePage>
     </BaseLayout>
-  );
+  )
 };
 
 export default Skills;
