@@ -1,4 +1,7 @@
 export {
+    createPortfolio
+} from './Portfolio';
+export {
     auth,
     logOut,
     authCheckState,
