@@ -9,8 +9,8 @@ router.post('/', async (req, res) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'javier.san.desarollo@gmail.com',
-            pass: 'a6G23f@msHU%23'
+            user: '',
+            pass: ''
         },
         tls: {
             rejectUnauthorized: false
@@ -19,8 +19,8 @@ router.post('/', async (req, res) => {
 
 
     var mailOptions = {
-        from: 'javier.san.desarollo@gmail.com',
-        to: 'javier.san.desarollo@gmail.com',
+        from: '',
+        to: '',
         subject: 'PAGINA WEB!!!',
         text: `
         email: ${req.body.email},

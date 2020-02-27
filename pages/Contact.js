@@ -3,7 +3,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/shared/BasePage';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-//import { sendQuestion } from '../store/actions/contact';
+import { sendQuestion } from '../store/actions/contact';
 import { Button, Modal, ModalBody, ModalFooter, Spinner } from 'reactstrap';
 
 const SignupSchema = Yup.object().shape({
@@ -45,7 +45,7 @@ const Contact = props => {
               onSubmit={async function (values) {
                 let contact;
                 try {
-                  //contact = await sendQuestion(values);
+                  contact = await sendQuestion(values);
                   if (contact) {
                     toggleModal();
                     toggleSpinner();
