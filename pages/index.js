@@ -44,7 +44,7 @@ const Index = props => {
                     <Button className="index-about-button" onClick={redirectPage}>about me</Button>
                 </div>
                 <div className="index-footer">
-
+                    <img src='../static/images/logos/github.png' className="github-img" onClick={() => window.open("https://github.com/javierV8")}></img>
                 </div>
             </div>
         </BaseLayout>
