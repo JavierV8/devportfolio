@@ -3,6 +3,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import Typed from 'react-typed';
 import { Button } from 'reactstrap';
 import Router from 'next/router';
+import WordCarrousel from '../components/Word_Carousel/Word_Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Index = props => {
@@ -19,7 +20,7 @@ const Index = props => {
                     <div className="text-index-welcome" id="text-index-welcome-id">
                         <div className="text-index-welcome-1">Hi Im</div>
                         <div className="text-index-welcome-2">Javier Sanchez</div>
-                        <h1 className="text-index-welcome-3">Software Engineer</h1>
+                        <WordCarrousel />
                         <div className="text-index-welcome-4">
                             Passionate about information technologiesand Self-learning software engineering through research & development.
                                 </div>
