@@ -9,7 +9,7 @@ const About = props => {
       <BasePage className="about-page">
         <div className="about-section">
           <div className="left-side bounceInLeft">
-
+            <img className="image-About" src='../static/images/about.png'></img>
           </div>
           <div className="right-side bounceInRight">
             <h1 className="about-title">About me</h1>
