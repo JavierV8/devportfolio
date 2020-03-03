@@ -1,168 +1,196 @@
-
 // INDEX PAGE
 .cover {
-    background: #ecedee;
-    position: relative;
-    overflow: hidden;
+  background: #dbdbdb;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin-top: 0;
+  position: relative;
+}
+.back{
+  color: rgb(5, 5, 5);
+}
+
+@media (min-aspect-ratio: 16/14) {
+  .main-section {
+    width: 100%;
+    height: 100vh;
+    left: 15px;
+    display: flex;
+    margin-left: 5%;
   }
-  .wrapper {
-    min-height: 100vh;
-    min-width: 100vw;
-    margin-top: 0;
-    position: relative;
+  .image-index {
+    margin: auto;
+    flex: 0.9;
   }
-  .back{
-    color: rgb(5, 5, 5);
+  .imageCara {
+    transition: all 2s;
+    width: 20px;
   }
-  
-  @media (min-aspect-ratio: 16/14) {
-    .main-section {
-      width: 100%;
-      height: 100vh;
-      left: 15px;
-      display: flex;
-    }
-    .image-index {
-      margin: auto;
-      flex: 1;
-    }
-    
-    .text-index {
-      flex: 1;
-      margin: auto;
-    }
-    .text-index-welcome-1 {
-      font-size: 1vw;
-    }
-    .text-index-welcome-2 {
-      font-size: 5vw;
-      font-weight: bold;
-    }
-    .text-index-welcome-3 {
-      font-size: 3vw;
-    }
-    .text-index-welcome-4 {
-      width: 60%;
-      font-size: 1.2vw;
-    }
-    .text-index-welcome-5 {
-      font-weight: bold;
-      font-size: 1.3vw;
-    }
-    .index-about-button {
-      margin-top: 2vw;
-      font-size: 1vw;
-    }
-    .index-footer {
-      position: absolute;
-      bottom: 2%;
-      height: 6%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      display: flex;
-    }
-    .index-footer img {
-      height: 100%;
-      margin-left: 10%;
-      cursor: pointer;
-    }
+  .text-index {
+    flex: 1;
+    margin: auto;
+    animation: aparecer 10s;
   }
-  
-  //Tablet-----------------
-  
-  @media (max-aspect-ratio: 16/15) {
-    .image-index {
-      margin: auto;
-      height: 100%;
-      position: absolute;
-      bottom: 18%;
-      opacity: 0.2;
-    }
-    .text-index {
-      margin-left: 10%;
-      position: absolute;             
-     top: 50%;                         
-     transform: translate(0, -60%)
-    }
-    .text-index-welcome-1 {
-      font-size: 2vh;
-      margin: auto;
-    }
-    .text-index-welcome-2 {
-      font-size: 6vh;
-      font-weight: bold;
-    }
-    .text-index-welcome-3 {
-      font-size: 4vh;
-    }
-    .text-index-welcome-4 {
-      width: 90%;
-      font-size: 2vh;
-    }
-    .text-index-welcome-5 {
-      font-weight: bold;
-      font-size: 1.8vh;
-    }
-    .index-about-button {
-      margin-top: 10vh;
-      font-size: 1.5vh;
-    }
-    .index-footer {
-      position: absolute;
-      width: 100vw;
-      height: 10%;
-      bottom: 0em;
-      background: black;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-    .index-footer img {
-      height: 70%;
-      padding-left: 5%;
-      padding-right: 5%;
-      cursor: pointer;
-    }
-    .github-img {
-      filter: invert(100%);
-    }
+  .text-index-welcome-1 {
+    font-size: 1vw;
   }
-  
-  //Smartphone-----------------
-  
-  @media (max-aspect-ratio: 10/16) {
-    .image-index {
-      margin: auto;
-      height: 100%;
-      position: absolute;
-      left: -15%;
-      bottom: 10%;
-      opacity: 0.2;
-    }
-    .text-index {
-      margin-left: 10%;
-      position: absolute;             
-      top: 50%;                         
-      transform: translate(0, -60%)
-    }
-    .text-index-welcome-2 {
-      font-size: 5vh;
-      font-weight: bold;
-    }
-    .text-index-welcome-3 {
-      font-size: 3vh;
-    }
-    .text-index-welcome-4 {
-      font-size: 1.5vh;
-    }
-    .text-index-welcome-5 {
-      font-size: 1.5vh;
-    }
-    .index-about-button {
-      margin-top: 10vh;
-      font-size: 1.5vh;
-    }
+  .text-index-welcome-2 {
+    font-size: 5vw;
+    font-weight: bold;
   }
-  
-  
-  
+  .text-index-welcome-3 {
+    font-size: 3vw;
+  }
+  .text-index-welcome-4 {
+    width: 65%;
+    font-size: 1.6vw;
+    margin-top: 3%;
+    line-height: 1.8vw;
+  }
+  .text-index-welcome-5 {
+    font-weight: bold;
+    font-size: 1.3vw;
+  }
+  .index-about-button {
+    margin-top: 2vw;
+    font-size: 1vw;
+    padding: 1.5%;
+  }
+  .index-footer {
+    position: absolute;
+    bottom: 2%;
+    height: 6%;
+    //background: black;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+  }
+  .index-footer img {
+    height: 100%;
+    margin-left: 10%;
+    cursor: pointer;
+  }
+}
+
+//Tablet-----------------
+
+@media (max-aspect-ratio: 16/15) {
+  .image-index {
+    margin: auto;
+    height: 100%;
+    position: absolute;
+    bottom: 30%;
+    opacity: 0.2;
+  }
+  .imageCara {
+    transition: all 2s;
+    width: 20px;
+  }
+  .text-index {
+    margin-left: 10%;
+    position: absolute;             
+   top: 50%;                         
+   transform: translate(0, -60%);
+   animation: aparecer 5s;
+  }
+  .text-index-welcome-1 {
+    font-size: 2vh;
+    margin: auto;
+  }
+  .text-index-welcome-2 {
+    font-size: 6vh;
+    font-weight: bold;
+  }
+  .text-index-welcome-3 {
+    font-size: 4vh;
+  }
+  .text-index-welcome-4 {
+    width: 90%;
+    font-size: 2.5vh;
+    margin-top: 3%;
+    line-height: 2.5vh;
+  }
+  .text-index-welcome-5 {
+    font-weight: bold;
+    font-size: 1.8vh;
+  }
+  .index-about-button {
+    margin-top: 10vh;
+    font-size: 1.8vh;
+    padding: 1.5vh;
+  }
+  .index-footer {
+    position: absolute;
+    width: 100vw;
+    height: 10%;
+    bottom: 0em;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .index-footer img {
+    height: 70%;
+    padding-left: 5%;
+    padding-right: 5%;
+    cursor: pointer;
+  }
+  .github-img {
+    filter: invert(100%);
+  }
+}
+
+//Smartphone-----------------
+
+@media (max-aspect-ratio: 10/16) {
+  .image-index {
+    margin: auto;
+    height: 100%;
+    position: absolute;
+    left: -15%;
+    bottom: 25%;
+    opacity: 0.2;
+  }
+  .text-index {
+    margin-left: 10%;
+    position: absolute;             
+    top: 50%;                         
+    transform: translate(0, -60%);
+    animation: aparecer 5s;
+  }
+  .text-index-welcome-2 {
+    font-size: 5vh;
+    font-weight: bold;
+  }
+  .text-index-welcome-3 {
+    font-size: 3vh;
+  }
+  .text-index-welcome-4 {
+    font-size: 1.5vh;
+    line-height: 1.8vh;
+  }
+  .text-index-welcome-5 {
+    font-size: 1.5vh;
+  }
+  .index-about-button {
+    margin-top: 10vh;
+    font-size: 1.5vh;
+  }
+}
+
+
+
+@keyframes aparecer {
+  0% {
+    color: #dbdbdb;
+  }
+  100% {
+    color: black;
+  }
+}
+
+
