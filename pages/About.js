@@ -5,46 +5,32 @@ import BasePage from '../components/shared/BasePage';
 const About = props => {
   const { auth } = props;
   return (
-    <BaseLayout auth={auth} className="cover">
+    <BaseLayout auth={auth}>
       <BasePage className="about-page">
         <div className="about-section">
           <div className="left-side bounceInLeft">
-            <img className="image-About" src='../static/images/cara.png'></img>
+
           </div>
           <div className="right-side bounceInRight">
             <h1 className="about-title">About me</h1>
-            <h5 className="about-subtitle">My name is Javier Sanchez and I am an experienced software engineer.</h5>
-            <div className="about-image-arround">
-              <p className="about-subsubTitle">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                a galley of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially
-                unchanged.
-              </p>
-              <img className="image-About-2" src='../static/images/cara.png'></img>
-            </div>
-
+            <h5 className="about-subtitle">My name is Javier Sanchez. I currently work as a software engineer in control systems.</h5>
             <p className="about-subsubTitle">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-              a galley of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.
+              I have a degree in 'Robotics and Computing Science' and experience working
+              on a wide range of technologies and projects from PLC,s for industrial enviroment to
+              modern mobile and web applications in React.
             </p>
             <p className="about-subsubTitle">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-              a galley of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-              a galley of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged.
-          </p>
+              I love Programming algorithms and developt solutions, but olso design UI effects, animations and creating
+              intuitive, dynamic user experiences. I olso tries to learn new  thecnologies and acquired advanced technical
+              knowledge. To that end, my new challenge is to immerse myself in the incredible world of data science and
+              learn this branch of science that is already the present and certainly predicts the  future.
+            </p>
+            <p className="about-subsubTitle">
+              As a software enthiusast I always will continue to pursue those engaging challenges and build software to
+              contribute to the open source community.
+            </p>
           </div>
+
         </div>
       </BasePage>
     </BaseLayout>
