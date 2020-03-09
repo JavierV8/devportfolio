@@ -27,7 +27,7 @@ const About = props => {
             </p>
             <p className="about-subsubTitle">
               As a software enthiusast I always will continue to pursue those engaging challenges and build software to
-              contribute to the open source community.......
+              contribute to the open source community.
             </p>
           </div>
 
