@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const config = require('config');
 
 var nodemailer = require('nodemailer');
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: '',
-            pass: ''
+            user: config.get('email'),
+            pass: config.get('emailPass'),
         },
         tls: {
             rejectUnauthorized: false
@@ -19,15 +19,15 @@ router.post('/', async (req, res) => {
 
 
     var mailOptions = {
-        from: '',
-        to: '',
+        from: config.get('email'),
+        to: config.get('email'),
         subject: 'PAGINA WEB!!!',
         text: `
-        email: ${req.body.email},
-        first name: ${req.body.firstName},
-        last name: ${req.body.lastName},
-        message: ${req.body.questions}
-        `
+            email: ${req.body.email},
+            first name: ${req.body.firstName},
+            last name: ${req.body.lastName},
+            message: ${req.body.questions}
+            `
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -38,5 +38,7 @@ router.post('/', async (req, res) => {
         }
     });
     res.send({ isSend: true });
+
+
 });
 module.exports = router;

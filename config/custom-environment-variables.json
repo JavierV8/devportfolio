@@ -1,4 +1,6 @@
 {
   "jwtPrivateKey": "portfolio_jwtPrivateKey",
-  "db": "portfolio_db"
+  "db": "portfolio_db",
+  "email": "portfolio_email",
+  "emailPass": "portfolio_emailPass"
 }

@@ -1,4 +1,4 @@
 {
-  "jwtPrivateKey": "1",
-  "db": "mongodb://localhost/portfolio"
+  "jwtPrivateKey": "",
+  "db": "mongodb://localhost/portfolios"
 }
