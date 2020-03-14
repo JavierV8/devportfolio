@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import BaseLayout from '../components/layouts/BaseLayout';
 import Typed from 'react-typed';
 import { Button } from 'reactstrap';
 import Router from 'next/router';
-
+import BaseLayout from '../components/layouts/BaseLayout';
 import Word_Carousel from '../components/Word_Carousel/Word_Carousel';
+import Spinner from '../components/Spinner/Spinner';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,6 +12,7 @@ const Index = props => {
     const { auth } = props;
     const [imageWdith, setImageWdith] = useState(null);
     const [isIniciated, setIsIniciated] = useState(true);
+
     const resizeFunction = () => {
         let widthPage = window.innerWidth;
         let heightPage = window.innerHeight;
@@ -19,13 +20,13 @@ const Index = props => {
             let widhtScreen = window.innerHeight * 1.1;
             let imageWidht = widhtScreen / 6;
             setImageWdith(imageWidht)
-            document.getElementById("image-index-id").style.height = "70vh";
+            document.getElementById("image-index-id").style.height = "100%";
             document.getElementById("image-index-id").style.width = (widhtScreen) + "px";
             if (window.innerWidth < 450) {
                 let widhtScreen = window.innerHeight;
                 let imageWidht = widhtScreen / 6;
                 setImageWdith(imageWidht)
-                document.getElementById("image-index-id").style.height = "70vh";
+                document.getElementById("image-index-id").style.height = "100%";
                 document.getElementById("image-index-id").style.width = (widhtScreen) + "px";
             }
         } else {
@@ -34,16 +35,9 @@ const Index = props => {
             const widthBox = window.innerWidth / 2;
             const porcent = (widthBox * 80) / 100;
             document.getElementById("image-index-id").style.height = porcent + "px";
-
         }
-        setIsIniciated(false)
-        setTimeout(function () {
-            for (let i = 1; i < 37; i++) (
-                document.getElementById(`image_${i}`).style.transform = `translate(${0}px, ${0}px)`
-            )
-        }, 10);
-
     }
+
     useEffect(() => {
         window.addEventListener('resize', resizeFunction);
         resizeFunction();
@@ -51,7 +45,6 @@ const Index = props => {
             window.removeEventListener('resize', resizeFunction);
         };
     }, [resizeFunction]);
-
     const redirectPage = () => {
         Router.push('/about');
     }
@@ -73,15 +66,29 @@ const Index = props => {
         )
     }
     for (let i = 1; i < 10; i++) (
-        images1.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/index_0${i}.png`} />)
+        images1.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_0${i}.png`} />)
     )
     for (let i = 10; i < 37; i++) (
-        images.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/index_${i}.png`} />)
+        images.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} />)
     )
 
+    const pageloaded = () => {
+        setIsIniciated(false)
+        setTimeout(function () {
+            for (let i = 1; i < 37; i++) (
+                document.getElementById(`image_${i}`).style.transform = `translate(${0}px, ${0}px)`
+            )
+        }, 10);
+        document.getElementById("main-section-id").style.display = "flex";
+        document.getElementById("image-index-id").style.display = "inline";
+        document.getElementById("text-index-id").style.display = "inline";
+    }
+    let render = null;
+    isIniciated ? render = <Spinner /> : render = null;
     return (
         <BaseLayout auth={auth} headerType="index">
-            <div className="main-section">
+            {render}
+            <div className="main-section" id="main-section-id">
                 <div md="6" className="image-index" id="image-index-id">
                     {images1}
                     {images}
@@ -114,7 +121,7 @@ const Index = props => {
                     </div>
                     <Button className="index-about-button" onClick={redirectPage}>about me</Button>
                 </div>
-                <div className="index-footer">
+                <div className="index-footer" onLoad={pageloaded}>
                     <img src='../static/images/logos/github.png' className="github-img" onClick={() => window.open("https://github.com/javierV8")}></img>
                 </div>
             </div>
@@ -123,4 +130,3 @@ const Index = props => {
 }
 
 export default Index;
-
