@@ -1,3 +1,4 @@
+
 // INDEX PAGE
 .cover {
   background: #dbdbdb;
@@ -18,9 +19,11 @@
   .main-section {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     left: 15px;
     display: flex;
     margin-left: 5%;
+    display: none;
   }
   .image-index {
     margin: auto;
@@ -79,12 +82,20 @@
 //Tablet-----------------
 
 @media (max-aspect-ratio: 16/15) {
-  .image-index {
-    margin: auto;
+  .main-section {
+    width: 100%;
     height: 100%;
-    position: absolute;
-    bottom: 30%;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+  }
+  .image-index {
+    //margin: auto;
+    //height: 100%;
+    position: fixed;
+    bottom: 0%;
     opacity: 0.2;
+    display: none;
   }
   .imageCara {
     transition: all 2s;
@@ -93,9 +104,10 @@
   .text-index {
     margin-left: 10%;
     position: absolute;             
-   top: 50%;                         
-   transform: translate(0, -60%);
-   animation: aparecer 5s;
+    top: 50%;                         
+    transform: translate(0, -60%);
+    animation: aparecer 5s;
+    display: none;
   }
   .text-index-welcome-1 {
     font-size: 2vh;
@@ -127,7 +139,7 @@
     position: absolute;
     width: 100vw;
     height: 10%;
-    bottom: 0em;
+    bottom: 0%;
     background: black;
     justify-content: center;
     align-items: center;
@@ -149,10 +161,10 @@
 @media (max-aspect-ratio: 10/16) {
   .image-index {
     margin: auto;
-    height: 100%;
-    position: absolute;
+    //height: 40%;
+    position: fixed;
     left: -15%;
-    bottom: 25%;
+    bottom: -8%;
     opacity: 0.2;
   }
   .text-index {
@@ -193,4 +205,8 @@
   }
 }
 
-
+@media (min-aspect-ratio: 16/10) {
+  .main-section {
+    padding-top: 5%;
+  }
+}
