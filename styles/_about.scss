@@ -1,20 +1,27 @@
+
 @media (min-aspect-ratio: 16/14) {
-	
+	body {
+		overflow-y: scroll;
+	}
 	.about-section {
-		display: flex;
+		display: none;
+		//position: fixed;
+		top: 0;
+		min-height: 100%;
+		padding-top: 20vh;
+		border: 1px solid blue;
 	}
 	.left-side {
 		flex: 1;
 		width: 50%;
-		height: 100vh;
+		height: 100%;
 		position: fixed;
 		margin-top: -150px;
-		//border: 1px solid red;
+		bottom: 0;
 	}
 	.image-About {
 		position: absolute;
 		width: 90%;
-		//border: 1px solid red;
 		bottom: 0;
 	}
 	.right-side {
@@ -22,6 +29,7 @@
 		width: 50%;
 		position: relative;
 		left: 50%;
+		height: 100%;
 	}
 	.about-title {
 		font-size: 3vw;
@@ -41,9 +49,11 @@
 }
 
 @media (max-aspect-ratio: 16/14) {
-	
+	body {
+		overflow-y: scroll;
+	}
 	.about-section {
-		display: flex;
+		display: none;
 	}
 	.left-side {
 		position: fixed;
@@ -54,12 +64,16 @@
 		width: 80vw;
 		opacity: 0.4;
 		bottom: 0;
-		z-index: -3;
 	}
 	.right-side {
+		position: relative;
 		width: 80%;
-		margin: auto;
-		z-index: 3;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		min-height: 100%;
 	}
 	.about-title {
 		font-size: 5vh;
@@ -73,6 +87,7 @@
 		font-size: 1.8vh;
 		text-align: justify;
 		text-justify: inter-word;
+		z-index: 1;
 	}
 
 }
@@ -80,7 +95,7 @@
 @media (max-aspect-ratio: 10/16) {
 	
 	.about-section {
-		display: flex;
+		display: none;
 	}
 	.left-side {
 		position: fixed;
