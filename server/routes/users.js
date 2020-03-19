@@ -30,5 +30,4 @@ router.post('/', auth, async (req, res) => {
   res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
 });
 
-module.exports = router;
-
+module.exports = router; 
