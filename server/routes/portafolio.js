@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 const { Portafolio, validate } = require('../models/portafolio');
@@ -6,7 +5,6 @@ const auth = require('../middleware/auth');
 const { ObjectId } = require('mongodb');
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -42,7 +40,7 @@ router.delete('/:id', auth, async (req, res) => {
     res.send();
 });
 
-router.patch('/:id', async (req, res) => {
+router.patch('/:id', auth, async (req, res) => {
     const portfolioId = req.body._id;
     let portfolioData = req.body;
     portfolioData._id = new ObjectId(portfolioId);
