@@ -41,3 +41,5 @@ export default role => Component =>
             return this.verifyAuth()
         }
     }
+    
+

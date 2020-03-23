@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as actionType from './actionTypes';
+import * as actionType from './actionType';
 import Cookies from "js-cookie";
 
 export const authStart = () => {
@@ -32,38 +32,63 @@ export const logOut = () => {
   }
 }
 
-export const auth = (password, name, isSignup) => {
-  return dispatch => {
+//NEW USER----------------------------------------------------------------------------------
+export const newUser = (name, email, password) => {
+  return async dispatch => {
     dispatch(authStart());
-    let authData = null;
-    isSignup ? authData = {
+    const token = Cookies.get('token');
+    if (token) {
+      const headers = {
+        'Content-Type': 'application/json',
+        'x-auth-token': token
+      }
+    }
+    const authData = {
       email: email,
       password: password,
       name: name
-    } :
-      authData = {
-        email: name,
-        password: password
-      }
-    let url = null;
-    isSignup ? url = 'http://localhost:4000/api/users' : url = 'http://localhost:4000/api/auth';
-    axios.post(url, authData)
-      .then(response => {
-        let name = response.data.name;
-        let id = response.data._id;
-        let isAdmin = response.data.isAdmin;
-        //let token = Object.entries(response.headers)[2];
-        //token = token[1];
-        const token = response.headers.x_auth_token;
-        Cookies.set('token', token);
-        dispatch(authSuccess(token, id, name, isAdmin));
-      })
-      .catch(error => {
-        dispatch(authError(error.response.data.error));
-      });
+    };
+    try {
+      let res = await axios.post(actionType.URL + 'users', authData, { headers: headers });
+      const { name, _id, isAdmin } = res.data;
+      const token = res.headers.x_auth_token;
+      Cookies.set('token', token);
+      dispatch(authSuccess(token, _id, name, isAdmin));
+    }
+    catch {
+      dispatch(authError(error.response.data.error));
+    }
+  }
+};
+
+//LOGIN------------------------------------------------------------------------------------
+export const login = (password, name) => {
+  return async dispatch => {
+    dispatch(authStart());
+    const authData = {
+      email: name,
+      password: password
+    }
+    try {
+      let res = await axios.post(actionType.URL + 'auth', authData);
+      const { name, _id, isAdmin } = res.data;
+      const token = res.headers.x_auth_token;
+      Cookies.set('token', token);
+      dispatch(authSuccess(token, _id, name, isAdmin));
+    }
+    catch {
+      dispatch(authError("error!!!"));
+    };
   };
 };
 
+
+//CHECK FOR TOKEN ON CLIENT SIDE----------------------------------------------------------
+export const clientAuth = () => {
+  return async dispatch => {
+    await dispatch(authCheckState());
+  }
+}
 
 export const authCheckState = () => {
   return async dispatch => {
@@ -74,10 +99,8 @@ export const authCheckState = () => {
         'x-auth-token': token
       }
       try {
-        let res = await axios.post('http://localhost:4000/api/auth/verifyToken', null, { headers: headers });
-        const userId = res.data.userId;
-        const userName = res.data.user;
-        const isAdmin = res.data.isAdmin;
+        let res = await axios.post(actionType.URL + 'auth/verifyToken', null, { headers: headers });
+        const { userId, userName, isAdmin } = res.data;
         dispatch(authSuccess(token, userId, userName, isAdmin));
       } catch (error) {
         Cookies.remove('token', { path: '' });
@@ -86,11 +109,8 @@ export const authCheckState = () => {
     }
   };
 };
-export const clientAuth = () => {
-  return async dispatch => {
-    await dispatch(authCheckState());
-  }
-}
+
+//CHECK FOR TOKEN ON SERVER SIDE-------------------------------------------------------------------------
 export const serverAuth = (req) => {
   return async dispatch => {
     if (req.headers.cookie) {
@@ -100,10 +120,8 @@ export const serverAuth = (req) => {
         'x-auth-token': cookie
       }
       try {
-        let res = await axios.post('http://localhost:4000/api/auth/verifyToken', null, { headers: headers })
-        const userId = res.data.userId;
-        const userName = res.data.user;
-        const isAdmin = res.data.isAdmin;
+        let res = await axios.post(actionType.URL + 'auth/verifyToken', null, { headers: headers })
+        const { userId, userName, isAdmin } = res.data;
         dispatch(authSuccess(cookie, userId, userName, isAdmin));
       } catch (error) {
         console.log(error.response.data)
@@ -112,3 +130,4 @@ export const serverAuth = (req) => {
     }
   }
 }
+

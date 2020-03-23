@@ -1,154 +1,154 @@
 .title {
-    font-size: 2.5vw;
-    font-weight: bold;
-    margin-left: 5vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin-left: 5vw;
 }
 .contact-form {
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-left: 5vw;
-    border-radius: 8px;
-    height: 350px;
-    color: white;
-    font-size: 15px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 5vw;
+  border-radius: 8px;
+  height: 350px;
+  color: white;
+  font-size: 15px;
 }
 .image-contact {
-    position: absolute;
-    bottom: 10%;
-    right: 0;
-    height: 80vh;
-    opacity: 0;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  height: 80vh;
+  opacity: 0;
 }
 .input-form {
-  border-radius: 3vw;
-  border: none;
-  width: 100%;
-  height: 3.5vw;
-  margin-top: 2vw;
-  padding-left: 4%;
-  font-size: 1vw;
-  
+border-radius: 3vw;
+border: none;
+width: 100%;
+height: 3.5vw;
+margin-top: 2vw;
+padding-left: 4%;
+font-size: 1vw;
+
 }
 .submit-form {
-  margin-top: 40px;
+margin-top: 40px;
 }
 .area-form {
-  border-radius: 1vw;
-  border: none;
-  height: 8vw;
-  width: 100%;
-  margin-top: 2vw;
-  padding-left: 20px;
-  font-size: 1vw;
+border-radius: 1vw;
+border: none;
+height: 8vw;
+width: 100%;
+margin-top: 2vw;
+padding-left: 20px;
+font-size: 1vw;
 }
 .contact-form button{
-  margin-top: 20px;
+margin-top: 20px;
 }
 .spinner-contact {
-  margin-top: 0px;
-  position: relative;
-  top: 18px;
-  left: 10px;
+margin-top: 0px;
+position: relative;
+top: 18px;
+left: 10px;
 }
 .contact-button {
-  width: 8vw;
-  height: 3vw;
-  border-radius: 0.4vw;
-  font-size: 1vw;
+width: 8vw;
+height: 3vw;
+border-radius: 0.4vw;
+font-size: 1vw;
 }
-  
+
 @media only screen and (max-width: 1600px) {
-  .title {
-    font-size: 38px;
+.title {
+  font-size: 38px;
 }
-  .image-contact {
-    right: -10%;
-  }
-  .contact-form {
-    margin-left: 20px;
-  }
-  .input-form {
-    border-radius: 30px;
-    border: none;
-    width: 600px;
-    padding-left: 20px;
-    height: 60px;
-    margin-top: 25px;
-    padding-left: 20px;
-    font-size: 18px;
-  }
- 
-  .area-form {
-    border-radius: 30px;
-    border: none;
-    width: 600px;
-    padding-left: 20px;
-    height: 60px;
-    margin-top: 25px;
-    padding-left: 20px;
-    font-size: 25px;
-    height: 180px;
-  }
-  .contact-button {
-    width: 80px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 14px;
-  }
+.image-contact {
+  right: -10%;
+}
+.contact-form {
+  margin-left: 20px;
+}
+.input-form {
+  border-radius: 30px;
+  border: none;
+  width: 600px;
+  padding-left: 20px;
+  height: 60px;
+  margin-top: 25px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.area-form {
+  border-radius: 30px;
+  border: none;
+  width: 600px;
+  padding-left: 20px;
+  height: 60px;
+  margin-top: 25px;
+  padding-left: 20px;
+  font-size: 25px;
+  height: 180px;
+}
+.contact-button {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 14px;
+}
 }
 @media only screen and (max-width: 1000px) {
-  .input-form, .area-form{
-    border-radius: 5px;
-    border: none;
-    width: 60vw;
-    height: 50px;
-    margin-top: 25px;
-    padding-left: 20px;
-    font-size: 20px;
-  }
- 
-  .area-form {
-    height: 180px;
-  }
+.input-form, .area-form{
+  border-radius: 5px;
+  border: none;
+  width: 60vw;
+  height: 50px;
+  margin-top: 25px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.area-form {
+  height: 180px;
+}
 }
 @media only screen and (max-width: 700px) {
-  .title {
-    font-size: 30px;
-  }
-  .input-form, .area-form{
-    width: 95vw;
-  }
-  .contact-form {
-    margin-left: 10px;
-  }
-  .image-contact {
-    height: 200px;
-    bottom: 0;
-  }
+.title {
+  font-size: 30px;
+}
+.input-form, .area-form{
+  width: 95vw;
+}
+.contact-form {
+  margin-left: 10px;
+}
+.image-contact {
+  height: 200px;
+  bottom: 0;
+}
 }
 @media only screen and (max-width: 500px) {
-  .input-form, .area-form{
-    width: 97vw;
-    font-size: 14px;
-  }
-  .contact-form {
-    margin-left: 5px;
-  }
+.input-form, .area-form{
+  width: 97vw;
+  font-size: 14px;
+}
+.contact-form {
+  margin-left: 5px;
+}
 }
 @media only screen and (max-width: 350px) {
 .title {
-  font-size: 25px;
+font-size: 25px;
 }
 }
 
 @media (max-aspect-ratio: 16/14) {
-  .input-form, .area-form{
-    width: 95vw;
-  }
-  .image-contact {
-    height: 200px;
-    bottom: 0;
-  }
+.input-form, .area-form{
+  width: 95vw;
+}
+.image-contact {
+  height: 200px;
+  bottom: 0;
+}
 }

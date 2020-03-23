@@ -8,5 +8,5 @@ const rootReducer = combineReducers({
   auth: authReducer,
 });
 export const initStore = (initialState = {}) => {
-   return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)));
+  return createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)));
 };

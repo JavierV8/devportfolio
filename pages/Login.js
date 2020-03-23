@@ -13,8 +13,7 @@ const Login = props => {
     const { auth } = props;
     const { handleSubmit, register, errors } = useForm();
     const submitLogin = e => {
-        let isSignup = false;
-        props.onAuth(e.Password, e.Name, isSignup);
+        props.onAuth(e.Password, e.Name);
     }
 
     let loading = null;
@@ -34,7 +33,7 @@ const Login = props => {
                         {errors.Password && 'Password is required.'}
                         <button type="submit">Sign In</button>
                     </form>
-                    <p className="license">(C) 2019 All Rights Reserved. Project Designed and created by JaviSan</p>
+                    <p className="license">Project Designed and created by JaviSan</p>
                 </div>
             </BasePage>
         </BaseLayout>
@@ -51,7 +50,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (password, name, isSignup) => dispatch(actions.auth(password, name, isSignup)),
+        onAuth: (password, name) => dispatch(actions.login(password, name)),
     };
 };
 

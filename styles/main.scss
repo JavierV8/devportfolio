@@ -1,17 +1,17 @@
 @import './shared/fonts';
-
-@import './portfolios';
-
-@import './index';
 @import './shared/header';
+@import './shared/spinner';
+
 @import './about';
-@import './cv';
 @import './contact';
-@import './skills';
+@import './cv';
+@import './index';
 @import './login';
+@import './mixins';
+@import './portfolio';
+@import './portfolioEdit';
+@import './skills';
 @import './Word_Carousel';
-
-
 
 html, body {
   height:100%;

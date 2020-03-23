@@ -1,11 +1,12 @@
 export {
     createPortfolio
-} from './Portfolio';
+} from './Portafolio';
 export {
-    auth,
+    newUser,
+    login,
     logOut,
     authCheckState,
     clientAuth,
     serverAuth,
     authSuccess
-} from './Auth';
+} from './auth';

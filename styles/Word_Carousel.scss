@@ -6,7 +6,7 @@ $fontSize: 3vw;
 	position: relative;
 	width: 100%;
 	font-size: $fontSize;
-	height: $fontSize;
+	height: 2.5vw;
 	.pre {
 		position: absolute;
 		top: 0;
@@ -20,6 +20,7 @@ $fontSize: 3vw;
 		.change_inner {
 			position: relative;
 			animation: rotate 15s ease-in-out infinite;
+			animation-delay: 4s;
 		}
 		.element {
 			display: block;

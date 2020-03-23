@@ -1,3 +1,10 @@
+#carrousel-id {
+  display: none;
+  position: fixed;
+  //height: 100%;
+  //overflow: hidden;
+  top: 10%;
+}
 .skills-h1 {
   position: relative;
   font-size: 50px;
@@ -31,6 +38,7 @@
 .image-move {
   position: relative;
   width: 23%;
+  height: 23%;
   transition: all 1s;
   -webkit-box-shadow: 0px 0px 12px -8px #333333;
   box-shadow: 0px 0px 12px -8px #333333;
@@ -38,9 +46,6 @@
   border-radius: 10%;
   padding: 10px;
   margin: 5%;
-}
-#Modbus #nodejs {
-  height: 100%;
 }
 .carruselBot {
   width: 80vw;
@@ -56,11 +61,29 @@
     width: 40%;
   }
   .containerSkills {
-    width: 60vw;
+    width: 40vh;
   }
   .skills-title-pri {
     font-size: 40px;
     margin-left: 30px;
+  }
+  .carruselBot {
+    top: 10vh;
+  }
+  .carruselBot {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+@media (min-aspect-ratio: 16/10) {
+  .carruselBot {
+    top: 10vh;
+  }
+}
+@media (min-aspect-ratio: 16/6) {
+  .carruselBot {
+    top: 15vh;
   }
 }
 
