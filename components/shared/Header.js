@@ -60,9 +60,6 @@ class Header extends Component {
               <NavItem className="port-vabar-item">
                 <BsNavLink route="/contact" title="Contact" />
               </NavItem>
-              <NavItem className="port-vabar-item">
-                <BsNavLink route="/cv" title="CV" />
-              </NavItem>
               {auth.isAuth ?
                 <NavItem className="port-vabar-item" onClick={logOut}>
                   <BsNavLink route="/login" title={authButton} />
