@@ -44,7 +44,7 @@ class Header extends Component {
     return (
       <div>
         <Navbar className={`port-navbar port-nav-base absolute ${className}`} color="transparent" dark expand="md">
-          <NavbarBrand className="port-navbar-brand" href="/">Javier Sanchez</NavbarBrand>
+          <NavbarBrand className="port-navbar-brand home" href="/">Javier Sanchez</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

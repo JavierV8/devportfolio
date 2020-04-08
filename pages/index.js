@@ -30,9 +30,9 @@ const Index = props => {
                 document.getElementById("image-index-id").style.width = (widhtScreen) + "px";
             }
         } else {
-            let imageWidht = (((window.innerWidth / 2) * 95 / 100) / 6);
+            let imageWidht = (((window.innerWidth / 2) * 85 / 100) / 6);
             setImageWdith(imageWidht - 1)
-            const widthBox = window.innerWidth / 2;
+            const widthBox = (window.innerWidth / 2) * 0.9;
             const porcent = (widthBox * 80) / 100;
             document.getElementById("image-index-id").style.height = porcent + "px";
         }
@@ -66,13 +66,14 @@ const Index = props => {
         )
     }
     for (let i = 1; i < 10; i++) (
-        images1.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_0${i}.png`} />)
+        images1.push(<img style={imageStyle[i]} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_0${i}.jpg`} />)
     )
     for (let i = 10; i < 37; i++) (
-        images.push(<img style={imageStyle[i]} id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} />)
+        images.push(<img style={imageStyle[i]} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.jpg`} />)
     )
 
     const pageloaded = () => {
+
         setIsIniciated(false)
         setTimeout(function () {
             for (let i = 1; i < 37; i++) (
@@ -83,6 +84,7 @@ const Index = props => {
         document.getElementById("image-index-id").style.display = "inline";
         document.getElementById("text-index-id").style.display = "inline";
     }
+
     let render = null;
     isIniciated ? render = <Spinner /> : render = null;
     return (
@@ -121,8 +123,8 @@ const Index = props => {
                     </div>
                     <Button className="index-about-button" onClick={redirectPage}>about me</Button>
                 </div>
-                <div className="index-footer" onLoad={pageloaded}>
-                    <img src='../static/images/logos/github.png' className="github-img" onClick={() => window.open("https://github.com/javierV8")}></img>
+                <div className="index-footer">
+                    <img alt="resized image" onLoad={pageloaded} src='../static/images/logos/github.png' className="github-img" onClick={() => window.open("https://github.com/javierV8")}></img>
                 </div>
             </div>
         </BaseLayout>

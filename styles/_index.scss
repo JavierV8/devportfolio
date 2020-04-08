@@ -18,16 +18,16 @@
 @media (min-aspect-ratio: 16/14) {
   .main-section {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
+    margin-top: -10vh;
     overflow: hidden;
-    left: 15px;
     display: flex;
-    margin-left: 5%;
     display: none;
   }
   .image-index {
     margin: auto;
     flex: 0.9;
+    padding-left: 6%;
   }
   .imageCara {
     transition: all 2s;
@@ -37,6 +37,7 @@
     flex: 1;
     margin: auto;
     animation: aparecer 10s;
+    padding-left: 5%;
   }
   .text-index-welcome-1 {
     font-size: 1vw;
@@ -51,35 +52,40 @@
   .text-index-welcome-4 {
     width: 65%;
     font-size: 1.6vw;
-    margin-top: 3%;
     line-height: 1.8vw;
+    margin-top: 2vw;
   }
   .text-index-welcome-5 {
     font-weight: bold;
     font-size: 1.3vw;
   }
   .index-about-button {
-    margin-top: 2vw;
+    margin-top: 5vw;
     font-size: 1vw;
     padding: 1.5%;
   }
   .index-footer {
     position: absolute;
-    bottom: 2%;
-    height: 6%;
-    //background: black;
-    left: 50%;
-    transform: translate(-50%, 0);
+    width: 100vw;
+    height: 45px;
+    bottom: 0%;
+    background: black;
+    justify-content: center;
+    align-items: center;
     display: flex;
   }
   .index-footer img {
     height: 100%;
-    margin-left: 10%;
     cursor: pointer;
+    position: absolute;
+    left: 50%;
+  }
+  .github-img {
+    filter: invert(100%);
   }
 }
 
-//Tablet-----------------
+//Tablet---------------------------------------------
 
 @media (max-aspect-ratio: 16/15) {
   .main-section {
@@ -90,8 +96,6 @@
     position: fixed;
   }
   .image-index {
-    //margin: auto;
-    //height: 100%;
     position: fixed;
     bottom: 0%;
     opacity: 0.2;
@@ -151,17 +155,14 @@
     padding-right: 5%;
     cursor: pointer;
   }
-  .github-img {
-    filter: invert(100%);
-  }
+  
 }
 
-//Smartphone-----------------
+//Smartphone------------------------------------------------
 
 @media (max-aspect-ratio: 10/16) {
   .image-index {
-    margin: auto;
-    //height: 40%;
+    margin: auto; 
     position: fixed;
     left: -15%;
     bottom: -8%;
