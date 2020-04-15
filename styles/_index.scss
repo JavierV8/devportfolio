@@ -14,24 +14,22 @@
 .back{
   color: rgb(5, 5, 5);
 }
-
-@media (min-aspect-ratio: 16/14) {
-  .main-section {
+//16/14
+@media (min-aspect-ratio: 15/15) {
+  .main-section2 {
     width: 100%;
-    height: 110vh;
-    margin-top: -10vh;
+    height: 100vh;
     overflow: hidden;
-    display: flex;
     display: none;
   }
   .image-index {
     margin: auto;
-    flex: 0.9;
-    padding-left: 6%;
+    flex: 1;
+    margin-left: 5.5%;
   }
   .imageCara {
     transition: all 2s;
-    width: 20px;
+    width: 10px;
   }
   .text-index {
     flex: 1;
@@ -87,7 +85,7 @@
 
 //Tablet---------------------------------------------
 
-@media (max-aspect-ratio: 16/15) {
+@media (max-aspect-ratio: 15/15) {
   .main-section {
     width: 100%;
     height: 100%;
@@ -211,5 +209,4 @@
     padding-top: 5%;
   }
 }
-
 
