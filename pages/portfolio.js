@@ -46,6 +46,8 @@ class Portfolio extends React.Component {
 
   renderPortfolios(portfolios) {
     const { isAuth, isAdmin } = this.props.auth;
+    portfolios.sort((a, b) => (a.num < b.num) ? 1 : ((b.num < a.num) ? -1 : 0));
+    console.log(portfolios)
     return portfolios.map((portfolio, index) => {
       return (
         <PortfolioCard className="portfolio-card" portfolio={portfolio}>
