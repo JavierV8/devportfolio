@@ -7,6 +7,7 @@ const Word_Carousel = () => {
                     <h1 className="element text-index-welcome-3">Software Engineer</h1>
                     <h1 className="element text-index-welcome-3">Software Enthusiast</h1>
                     <h1 className="element text-index-welcome-3">Full-Stack Developer</h1>
+                    <h1 className="element text-index-welcome-3">Software Engineer</h1>
                 </div>
         </div>
     )
