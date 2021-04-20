@@ -3,19 +3,8 @@ body {
   background: rgb(238, 238, 238);
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-.index-container {
-  border: 1px solid red;
-  margin: auto;
-  max-width: 1200px;
-  display: flex;
-}
-.index-face-box {
-  border: 1px solid red;
-  flex: 1;
-}
-.index-text-box {
-  flex: 1;
 }
