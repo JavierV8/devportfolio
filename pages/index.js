@@ -1,65 +1,124 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import React, { useState, useEffect } from 'react';
+import Typed from 'react-typed';
+import Word_Carousel from '../components/Word_Carousel';
+
+
 export default function Home() {
+    const [imageWdith, setImageWdith] = useState(null);
+    const [isIniciated, setIsIniciated] = useState(true);
+
+    const resizeFunction = () => {
+        let widthPage = window.innerWidth;
+        let heightPage = window.innerHeight;
+        if (widthPage < heightPage) {
+            let widhtScreen = window.innerHeight * 1.1;
+            let imageWidht = widhtScreen / 6;
+            setImageWdith(imageWidht)
+            document.getElementById("image-index-id").style.height = "100%";
+            document.getElementById("image-index-id").style.width = (widhtScreen) + "px";
+            if (window.innerWidth < 450) {
+                let widhtScreen = window.innerHeight;
+                let imageWidht = widhtScreen / 6;
+                setImageWdith(imageWidht)
+                document.getElementById("image-index-id").style.height = "100%";
+                document.getElementById("image-index-id").style.width = (widhtScreen) + "px";
+            }
+        } else {
+            let porcentage = (window.innerWidth * 5.5) / 100
+            let imageWidht = (((window.innerWidth / 2 - porcentage) * 100 / 100) / 6);
+            setImageWdith(imageWidht - 1)
+            const widthBox = (window.innerWidth / 2) * 0.9;
+            const porcent = (widthBox * 85) / 100;
+            document.getElementById("image-index-id").style.height = porcent + "px";
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', resizeFunction);
+        resizeFunction();
+        pageloaded();
+        return () => {
+            window.removeEventListener('resize', resizeFunction);
+        };
+    }, [resizeFunction]);
+
+    const redirectPage = () => {
+        Router.push('/about');
+    }
+
+    let imageStyle = [];
+    let random1 = null;
+    let random2 = null;
+    let images = [];
+    if (isIniciated) {
+        for (let i = 0; i <= 36; i++) (
+            random1 = Math.floor(Math.random() * (600 - -600 + 1)) + -600,
+            random2 = Math.floor(Math.random() * (600 - -600 + 1)) + -600,
+            imageStyle.push({ transform: `translate(${random1}px, ${random2}px)`, minWidth: imageWdith - 5 })
+        )
+    } else {
+        for (let i = 0; i <= 36; i++) (
+            imageStyle.push({ transform: `0px`, minWidth: imageWdith - 5 })
+        )
+    }
+
+    for (let i = 1; i <= 36; i++) (
+        images.push(<img style={imageStyle[i]} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} />)
+    )
+
+    const pageloaded = () => {
+        setIsIniciated(false)
+        setTimeout(function () {
+            for (let i = 1; i <= 36; i++) (
+                document.getElementById(`image_${i}`).style.transform = `translate(${0}px, ${0}px)`
+            )
+        }, 100);
+        document.getElementById("main-section-id").style.display = "flex";
+        document.getElementById("image-index-id").style.display = "inline";
+        document.getElementById("text-index-id").style.display = "inline";
+    }
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className={styles.container2}>
+            <div className="main-section2" id="main-section-id">
+                <div className="image-index" id="image-index-id">
+                    {images}
+                </div>
+                <div className="text-index" id="text-index-id">
+                    <div className="text-index-welcome" id="text-index-welcome-id">
+                        <div className="text-index-welcome-1">Hi Im</div>
+                        <div className="text-index-welcome-2">Javier Sanchez</div>
+                        <Word_Carousel />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+                        <div className="text-index-welcome-4">
+                            Passionate about information technologies and Self-learning software engineering.
+                                </div>
+                        <div className="text-index-welcome-5">
+                            <Typed
+                                loop
+                                typeSpeed={80}
+                                backSpeed={10}
+                                strings={["Front-End thenclogies JavaScript | React | CSS | HTML", "Back-End techncoligies NodeJS | Express | NOSQL | SQL", "DevTools"]}
+                                smartBackspace
+                                shuffle={false}
+                                backDelay={5000}
+                                fadeOut={false}
+                                fadeOutDelay={100}
+                                loopCount={0}
+                                showCursor
+                                cursorChar="|"
+                            />
+                        </div>
+                    </div>
+                    <p>GitHUb</p>
+                    <p>Email</p>
+                    <p>Open Source projects</p>
+                    <button className="index-about-button" onClick={redirectPage}>about me</button>
+                </div>
+            </div>
     </div>
   )
 }

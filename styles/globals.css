@@ -1,5 +1,6 @@
 html,
 body {
+  background: rgb(238, 238, 238);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -14,3 +15,297 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@media (min-aspect-ratio: 15/15) {
+  .main-section2 {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: none;
+  }
+  .image-index {
+    margin: auto;
+    flex: 1;
+    margin-left: 5.5%;
+  }
+  .imageCara {
+    transition: all 2s;
+    width: 10px;
+  }
+  .text-index {
+    flex: 1;
+    margin: auto;
+    animation: aparecer 10s;
+    padding-left: 5%;
+  }
+  .text-index-welcome-1 {
+    font-size: 1vw;
+  }
+  .text-index-welcome-2 {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  .text-index-welcome-3 {
+    font-size: 3vw;
+  }
+  .text-index-welcome-4 {
+    width: 70%;
+    font-size: 1.6vw;
+    line-height: 1.1vw;
+  }
+  .text-index-welcome-5 {
+    font-weight: bold;
+    font-size: 1.3vw;
+  }
+  .index-about-button {
+    margin-top: 5vw;
+    font-size: 1vw;
+    padding: 1.5%;
+  }
+  .index-footer {
+    position: absolute;
+    width: 100vw;
+    height: 45px;
+    bottom: 0%;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .index-footer img {
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+  }
+  .github-img {
+    filter: invert(100%);
+  }
+}
+
+@media (max-aspect-ratio: 15/15) {
+  .main-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+  }
+  .image-index {
+    position: fixed;
+    bottom: 0%;
+    opacity: 0.2;
+    display: none;
+  }
+  .imageCara {
+    transition: all 2s;
+    width: 20px;
+  }
+  .text-index {
+    margin-left: 10%;
+    position: absolute;             
+    top: 50%;                         
+    transform: translate(0, -60%);
+    animation: aparecer 5s;
+    display: none;
+  }
+  .text-index-welcome-1 {
+    font-size: 2vh;
+    margin: auto;
+  }
+  .text-index-welcome-2 {
+    font-size: 6vh;
+    font-weight: bold;
+  }
+  .text-index-welcome-3 {
+    font-size: 4vh;
+  }
+  .text-index-welcome-4 {
+    width: 90%;
+    font-size: 2.5vh;
+    line-height: 2.5vh;
+  }
+  .text-index-welcome-5 {
+    font-weight: bold;
+    font-size: 1.8vh;
+  }
+  .index-about-button {
+    margin-top: 10vh;
+    font-size: 1.8vh;
+    padding: 1.5vh;
+  }
+  .index-footer {
+    position: absolute;
+    width: 100vw;
+    height: 10%;
+    bottom: 0%;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .index-footer img {
+    height: 70%;
+    padding-left: 5%;
+    padding-right: 5%;
+    cursor: pointer;
+  }
+  
+}
+
+@media (max-aspect-ratio: 10/16) {
+  .image-index {
+    margin: auto; 
+    position: fixed;
+    left: -15%;
+    bottom: -8%;
+    opacity: 0.2;
+  }
+  .text-index {
+    margin-left: 10%;
+    position: absolute;             
+    top: 50%;                         
+    transform: translate(0, -60%);
+    animation: aparecer 5s;
+  }
+  .text-index-welcome-2 {
+    font-size: 5vh;
+    font-weight: bold;
+  }
+  .text-index-welcome-3 {
+    font-size: 3vh;
+  }
+  .text-index-welcome-4 {
+    font-size: 1.5vh;
+    line-height: 1.8vh;
+  }
+  .text-index-welcome-5 {
+    font-size: 1.5vh;
+  }
+  .index-about-button {
+    margin-top: 10vh;
+    font-size: 1.5vh;
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    color: #dbdbdb;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@media (min-aspect-ratio: 16/10) {
+  .main-section {
+    padding-top: 5%;
+  }
+}
+
+
+.carousel-word {
+	position: relative;
+	width: 100%;
+	font-size: 3vw;
+	height: 2.5vw;
+  border: 1px solid red;
+}
+.pre {
+  position: absolute;
+  top: 0;
+  height: 3vw * 1.5;
+}
+.change_outer {
+  position: absolute;
+  top: 0;
+  height: 3vw * 1.2;
+  overflow: hidden;
+
+}
+.change_inner {
+  position: relative;
+  animation: rotate 15s ease-in-out infinite;
+  animation-delay: 4s;
+  padding: 0;
+  margin: 0;
+  border: 1px solid blue;
+}
+.element {
+  display: block;
+  margin: 0;
+  padding: 0;
+}	
+
+
+@media (max-aspect-ratio: 16/15) {
+	.carousel-word {
+		margin-top: -3%;
+		position: relative;
+		width: 100%;
+		font-size: 3vw;
+		height: 3vw;
+	}
+  .pre {
+    position: absolute;
+    top: 0;
+    height: 3vw * 1.5;
+  }
+  .change_outer {
+    position: absolute;
+    top: 0;
+    height: 3vw * 1.2;
+    overflow: hidden;
+  }	
+  .change_inner {
+    position: relative;
+    animation: rotate 15s ease-in-out infinite;
+  }
+  .element {
+    display: block;
+  }
+}
+
+
+@media (max-aspect-ratio: 10/16) {
+	.carousel-word {
+		margin-top: -3%;
+		position: relative;
+		width: 100%;
+		font-size: 3vw;
+		height: 3vh;
+	}
+  .pre {
+    position: absolute;
+    top: 0;
+    height: 3vw * 2;
+  }
+  .change_inner {
+    position: relative;
+    animation: rotate 15s ease-in-out infinite;
+  }
+  .element {
+    display: block;
+  }
+  .change_outer {
+    position: absolute;
+    top: 0;
+    height: 3vw * 1;
+    overflow: hidden;
+  }	
+}
+
+
+@keyframes rotate {
+	0%, 33% {
+		transform: translateY(0);
+	}
+	33%,66% {
+		transform: translateY(-50%);
+	}
+	66%,100% {
+		transform: translateY(-100%);
+	}
+}
+
+
