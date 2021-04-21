@@ -46,7 +46,6 @@ export default function Home() {
                 </div>
                 <p>GitHUb</p>
                 <p>Email</p>
-                <p>Open Source projects</p>
                 <button className="index-button">about me</button>
             </div>
         </IndexStyle>
