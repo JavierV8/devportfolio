@@ -25,6 +25,7 @@ export const IndexStyle = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Montserrat', 'Helvetica';
     
     .index-face-box {
         flex: 1;
@@ -35,21 +36,25 @@ export const IndexStyle = styled.div`
     .index-text-1 {
         margin-top: ${pr => pr.boxWidth * 0.05}px;
         font-size: ${pr => pr.boxWidth * 0.05}px;
+        font-weight: 300;
     }
     .index-text-2 {
         margin-top: ${pr => pr.boxWidth * 0.01}px;
         font-size: ${pr => pr.boxWidth * 0.14}px;
         font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         height: ${pr => pr.boxWidth * 0.15}px;
     }
     .index-text-3 {
         margin-top: ${pr => pr.boxWidth * 0.03}px;
         font-size: ${pr => pr.boxWidth * 0.045}px;
         line-height: 1.1;
+        font-weight: 300;
     }
     .index-text-4 {
-        font-size: ${pr => pr.boxWidth * 0.035}px;
-        font-weight: bold;
+        font-size: ${pr => pr.boxWidth * 0.034}px;
+        font-weight: 600;
     }
     .index-button {
         margin-top: ${pr => pr.boxWidth * 0.08}px;
@@ -67,6 +72,10 @@ export const IndexStyle = styled.div`
         height: ${pr => pr.boxWidth * 0.12}px;
         font-size: ${pr => pr.boxWidth * 0.04}px;
         overflow: hidden;
+    }
+    .carousel-word h1{
+        font-family: 'Montserrat', 'Helvetica';
+        font-weight: 300;
     }
     .change_inner {
         position: relative;

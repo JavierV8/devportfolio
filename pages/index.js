@@ -20,6 +20,9 @@ export default function Home() {
     }, [])
     return (
         <IndexStyle boxWidth={boxWidth}>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+            </style>
             <div className="index-face-box" ref={faceBox}></div>
             <div className="index-text-box" id="index-tex-tbox-id">
                 <div className="index-text-1">Hi Im</div>
