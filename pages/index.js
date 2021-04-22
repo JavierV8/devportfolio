@@ -8,22 +8,30 @@ import {IndexStyle} from '../styles/indexStyle';
 export default function Home() {
     const faceBox = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
+    const [imageSize, setImageSize] = useState(0);
     useEffect(() => {
         const resizeHandler = () => {
             console.log("EEE", boxWidth)
             setBoxWidth(faceBox.current.offsetWidth);
+            setImageSize(faceBox.current.offsetWidth / 6);
         }
         window.addEventListener('resize', resizeHandler);
         resizeHandler();
 
         return () => window.removeEventListener('resize', resizeHandler);
-    }, [])
+    }, []);
+
+    const images = [];
+    for (let i = 1; i <= 36; i++) (
+        images.push(<img style={{ transform: `0px`, width: imageSize-0.5 }} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} />)
+    )
+
     return (
         <IndexStyle boxWidth={boxWidth}>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
             </style>
-            <div className="index-face-box" ref={faceBox}></div>
+            <div className="index-face-box" ref={faceBox}>{images}</div>
             <div className="index-text-box" id="index-tex-tbox-id">
                 <div className="index-text-1">Hi Im</div>
                 <div className="index-text-2">Javier Sanchez</div>

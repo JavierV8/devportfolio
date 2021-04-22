@@ -18,7 +18,7 @@ const kf = keyframes`
 
 export const IndexStyle = styled.div`
     margin: auto;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 80%;
     display: flex;
     position: absolute;
@@ -35,11 +35,10 @@ export const IndexStyle = styled.div`
     }
     .index-text-1 {
         margin-top: ${pr => pr.boxWidth * 0.05}px;
-        font-size: ${pr => pr.boxWidth * 0.05}px;
+        font-size:  ${pr => pr.boxWidth * 0.05}px;
         font-weight: 300;
     }
     .index-text-2 {
-        margin-top: ${pr => pr.boxWidth * 0.01}px;
         font-size: ${pr => pr.boxWidth * 0.14}px;
         font-weight: bold;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
