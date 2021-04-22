@@ -65,6 +65,10 @@ export const IndexStyle = styled.div`
         border-radius: ${pr => pr.boxWidth * 0.01}px;
         padding: ${pr => pr.boxWidth * 0.018}px;
         color: white;
+        cursor: pointer;
+    }
+    .live {
+        margin-left: ${pr => pr.boxWidth * 0.03}px;
     }
     
     

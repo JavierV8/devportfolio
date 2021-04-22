@@ -58,6 +58,7 @@ export default function Home() {
                 <p>GitHUb</p>
                 <p>Email</p>
                 <button className="index-button">about me</button>
+                <button className="index-button live">live projects</button>
             </div>
         </IndexStyle>
   )
