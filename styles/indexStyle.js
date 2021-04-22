@@ -39,15 +39,16 @@ export const IndexStyle = styled.div`
         font-weight: 300;
     }
     .index-text-2 {
-        font-size: ${pr => pr.boxWidth * 0.14}px;
+        font-size: ${pr => pr.boxWidth * 0.13}px;
         font-weight: bold;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         height: ${pr => pr.boxWidth * 0.15}px;
     }
     .index-text-3 {
+        width: 90%;
         margin-top: ${pr => pr.boxWidth * 0.03}px;
-        font-size: ${pr => pr.boxWidth * 0.045}px;
+        font-size: ${pr => pr.boxWidth * 0.04}px;
         line-height: 1.1;
         font-weight: 300;
     }
@@ -69,7 +70,7 @@ export const IndexStyle = styled.div`
     
     .carousel-word {
         height: ${pr => pr.boxWidth * 0.12}px;
-        font-size: ${pr => pr.boxWidth * 0.04}px;
+        font-size: ${pr => pr.boxWidth * 0.035}px;
         overflow: hidden;
     }
     .carousel-word h1{
