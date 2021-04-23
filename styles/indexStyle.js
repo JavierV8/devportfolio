@@ -26,9 +26,14 @@ export const IndexStyle = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Montserrat', 'Helvetica';
+    color: #2e2e2e;
     
     .index-face-box {
         flex: 1;
+    }
+    .imageCara {
+        margin-bottom: -5px;
+        padding: 0;
     }
     .index-text-box {
         flex: 1;
