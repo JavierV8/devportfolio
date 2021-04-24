@@ -15,6 +15,30 @@ const kf = keyframes`
 	}
 `;
 
+export const LoadingIndexPageStyle = styled.div`
+    position fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(238, 238, 238);
+    z-index: 1;
+    transition: opacity 2000ms ease-out;
+    opacity: ${pr=> (pr.isVisible ? 1 : 0)};
+
+    div {
+        position: relative;
+        width: 10vw;
+        left: 50%;
+        top 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2vw;
+        transition: opacity 0ms ease-out;
+        opacity: ${pr=> (pr.isVisible ? 1 : 0)};
+    }
+`;
+
 
 export const IndexStyle = styled.div`
     margin: auto;

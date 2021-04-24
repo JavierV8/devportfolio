@@ -2,16 +2,20 @@ import Head from 'next/head'
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
 import Word_Carousel from '../components/Word_Carousel';
-import {IndexStyle} from '../styles/indexStyle';
+import {LoadingIndexPageStyle, IndexStyle} from '../styles/indexStyle';
+
 
 
 export default function Home() {
     const faceBox = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
     const [imageSize, setImageSize] = useState(0);
+    const [startMoving, setStartMoving] = useState(false);
+    const [images, setImages] = useState([]);
+    const [imageLoaded, setImageLoaded] = useState(0);
+
     useEffect(() => {
         const resizeHandler = () => {
-            console.log("EEE", boxWidth)
             setBoxWidth(faceBox.current.offsetWidth);
             setImageSize(faceBox.current.offsetWidth / 6);
         }
@@ -21,13 +25,36 @@ export default function Home() {
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
 
-    const images = [];
-    for (let i = 1; i <= 36; i++) (
-        images.push(<img style={{ transform: `0px`, width: imageSize-0.5 }} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} />)
-    )
+
+    useEffect(() => {
+        const imagess = [];
+        for (let i = 1; i <= 36; i++) {
+            const random1 = Math.floor(Math.random() * (600 - -600 + 1)) + -600;
+            const random2 = Math.floor(Math.random() * (600 - -600 + 1)) + -600;
+            const styles = {
+                transform: `translate(${random1}px, ${random2}px)`, 
+                width: imageSize-0.5,
+            };
+            imagess.push(<img style={styles} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} onLoad={() => setImageLoaded(img => img + 1)} />)
+        }
+        setImages(imagess);
+        setStartMoving(true);
+    }, [imageSize]);
+
+    if (imageLoaded > 35) {
+        setTimeout(function () {
+            for (let i = 1; i <= 36; i++) {
+                document.getElementById(`image_${i}`).style.transition = 'all 2s';
+                document.getElementById(`image_${i}`).style.transform = `translate(${0}px, ${0}px)`;
+                document.getElementById(`image_${i}`).style.width = imageSize - 0.5;
+            }
+        }, 100);
+    }
 
     return (
-        <IndexStyle boxWidth={boxWidth}>
+        <>
+            <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
+            <IndexStyle boxWidth={boxWidth}>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
             </style>
@@ -61,5 +88,6 @@ export default function Home() {
                 <button className="index-button live">live projects</button>
             </div>
         </IndexStyle>
+        </>
   )
 }
