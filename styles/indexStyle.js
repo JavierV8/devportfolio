@@ -61,6 +61,9 @@ export const IndexStyle = styled.div`
     }
     .index-text-box {
         flex: 1;
+        transition: opacity 5000ms ease-out;
+        transition-delay: 1000ms;
+        opacity: ${pr=> (pr.isVisible ? 0 : 1)};
     }
     .index-text-1 {
         margin-top: ${pr => pr.boxWidth * 0.05}px;

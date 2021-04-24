@@ -54,7 +54,7 @@ export default function Home() {
     return (
         <>
             <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
-            <IndexStyle boxWidth={boxWidth}>
+            <IndexStyle boxWidth={boxWidth} isVisible={imageLoaded < 36}>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
             </style>
