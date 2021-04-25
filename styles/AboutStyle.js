@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const AboutStyleLandscape = styled.div`
     display: flex;
@@ -7,10 +7,14 @@ export const AboutStyleLandscape = styled.div`
         flex: 1;
         height: 100vh;
     }
+    .about-text {
+        overflow-Y: scroll;
+    }
     img {
-        width: 50%;
+        width: 30%;
         position: absolute;
         bottom: 0;
+        opacity: 0.7
     }
 
     h1 {
@@ -21,6 +25,13 @@ export const AboutStyleLandscape = styled.div`
         width: 80%;
         margin: auto;
         margin-top: 5vw;
+    }
+    h3 {
+        font-family: 'Montserrat', 'Helvetica';
+        font-size: 2vw;
+        font-weight: 200;
+        width: 80%;
+        margin: auto;
     }
     p {
         font-family: 'Montserrat', 'Helvetica';
@@ -36,19 +47,23 @@ export const AboutStyleLandscape = styled.div`
 export const AboutStylePotrait = styled.div`
     display: block;
     background-color: #dbdbdb;
-    height: 100vh;
+    positon: fixed;
     div {
         flex: 1;
-        height: 100vh;
+        height: 90vh;
         position: absolute;
         background: transparent;
     }
     .about-image {
-        height: 90vw;
-        bottom: 0;
+        height: 100vw;
+        bottom: -6%;
+        position: fixed;
+        width: 100vw;
+        left: -5%;
     }
     img {
-        width: 100vw;
+        position: absolute;
+        width: 100%;
         z-index: 2;
         opacity: 0.5;
     }
@@ -61,6 +76,13 @@ export const AboutStylePotrait = styled.div`
         width: 90%;
         margin: auto;
         margin-top: 8vh;
+    }
+    h3 {
+        font-family: 'Montserrat', 'Helvetica';
+        font-size: 5vw;
+        font-weight: 200;
+        width: 90%;
+        margin: auto;
     }
     p {
         font-family: 'Montserrat', 'Helvetica';
