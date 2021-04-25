@@ -54,12 +54,12 @@ export default function Home() {
         }, 50);
     }
 
-    const Prueba = isPotrait ? IndexStylePotrait : IndexStyleLandscape;
+    const IndexStyle = isPotrait ? IndexStylePotrait : IndexStyleLandscape;
 
     return (
         <>
             <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
-            <Prueba boxWidth={boxWidth} isVisible={imageLoaded < 36}>
+            <IndexStyle boxWidth={boxWidth} isVisible={imageLoaded < 36}>
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
                 </style>
@@ -92,7 +92,7 @@ export default function Home() {
                 <button className="index-button">about me</button>
                 <button className="index-button live">live projects</button>
             </div>
-            </Prueba>
+            </IndexStyle>
         </>
     )
 }
