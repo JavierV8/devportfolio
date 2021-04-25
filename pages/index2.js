@@ -2,33 +2,29 @@ import Head from 'next/head'
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
 import Word_Carousel from '../components/Word_Carousel';
-import { LoadingIndexPageStyle, IndexStyleLandscape, IndexStylePotrait } from '../styles/indexStyle';
+import { LoadingIndexPageStyle, IndexStyle2 } from '../styles/indexStyle2';
 
 export default function Home() {
     const faceBox = useRef(null);
     const [boxWidth, setBoxWidth] = useState(0);
     const [imageSize, setImageSize] = useState(0);
+    const [startMoving, setStartMoving] = useState(false);
     const [images, setImages] = useState([]);
     const [imageLoaded, setImageLoaded] = useState(0);
-    const [isPotrait, setIsPotrait] = useState(false);
 
     useEffect(() => {
         const resizeHandler = () => {
-            if(window.innerHeight > window.innerWidth){
-                setIsPotrait(true);
-                setBoxWidth(window.innerHeight);
-                setImageSize(window.innerHeight / 6);
-            } else {
-                setIsPotrait(false);
-                setBoxWidth(faceBox.current.offsetWidth);
-                setImageSize(faceBox.current.offsetWidth / 6);
-            }
+            setBoxWidth(window.innerHeight);
+            setImageSize(window.innerHeight / 6);
+            //setBoxWidth(faceBox.current.offsetWidth);
+            //setImageSize(faceBox.current.offsetWidth / 6);
         }
         window.addEventListener('resize', resizeHandler);
         resizeHandler();
 
         return () => window.removeEventListener('resize', resizeHandler);
     }, []);
+
 
     useEffect(() => {
         const imagess = [];
@@ -37,11 +33,12 @@ export default function Home() {
             const random2 = Math.floor(Math.random() * (600 - -600 + 1)) + -600;
             const styles = {
                 transform: `translate(${random1}px, ${random2}px)`, 
-                width: imageSize - 1,
+                width: imageSize-1,
             };
             imagess.push(<img style={styles} alt="resized image" id={`image_${i}`} className="imageCara" src={`../static/images/cara/Index_${i}.png`} onLoad={() => setImageLoaded(img => img + 1)} />)
         }
         setImages(imagess);
+        setStartMoving(true);
     }, [imageSize]);
 
     if (imageLoaded > 35) {
@@ -53,18 +50,15 @@ export default function Home() {
             }
         }, 50);
     }
-
-    const Prueba = isPotrait ? IndexStylePotrait : IndexStyleLandscape;
-
     return (
         <>
             <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
-            <Prueba boxWidth={boxWidth} isVisible={imageLoaded < 36}>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
-                </style>
-                <div className="index-face-box" ref={faceBox}>{images}</div>
-                <div className="index-text-box" id="index-tex-tbox-id">
+            <IndexStyle2 boxWidth={boxWidth} isVisible={imageLoaded < 36}>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+            </style>
+            <div className="index-face-box" ref={faceBox}>{images}</div>
+            <div className="index-text-box" id="index-tex-tbox-id">
                 <div className="index-text-1">Hi Im</div>
                 <div className="index-text-2">Javier Sanchez</div>
                 <Word_Carousel />
@@ -92,7 +86,7 @@ export default function Home() {
                 <button className="index-button">about me</button>
                 <button className="index-button live">live projects</button>
             </div>
-            </Prueba>
+            </IndexStyle2>
         </>
-    )
+  )
 }
