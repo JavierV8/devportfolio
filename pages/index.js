@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React, { useState, useEffect, useRef } from 'react';
 import Typed from 'react-typed';
+import { useRouter } from 'next/router'
 import Word_Carousel from '../components/Word_Carousel';
 import { LoadingIndexPageStyle, IndexStyleLandscape, IndexStylePotrait } from '../styles/indexStyle';
 
@@ -11,6 +12,7 @@ export default function Home() {
     const [images, setImages] = useState([]);
     const [imageLoaded, setImageLoaded] = useState(0);
     const [isPotrait, setIsPotrait] = useState(false);
+    const router = useRouter()
 
     useEffect(() => {
         const resizeHandler = () => {
@@ -89,7 +91,7 @@ export default function Home() {
                 </div>
                 <p>GitHUb</p>
                 <p>Email</p>
-                <button className="index-button">about me</button>
+                <button className="index-button" onClick={() => router.push('/about')}>about me</button>
                 <button className="index-button live">live projects</button>
             </div>
             </IndexStyle>

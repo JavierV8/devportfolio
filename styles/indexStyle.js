@@ -25,6 +25,7 @@ export const LoadingIndexPageStyle = styled.div`
     z-index: 1;
     transition: opacity 2000ms ease-out;
     opacity: ${pr=> (pr.isVisible ? 1 : 0)};
+    display: ${pr=> (pr.isVisible ? 'inline' : 'none')};
 
     div {
         position: relative;

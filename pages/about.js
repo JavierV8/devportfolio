@@ -1,14 +1,30 @@
-import React from 'react';
-import { AboutStyle } from '../styles/AboutStyle';
+import React, {useState, useEffect} from 'react';
+import { AboutStyleLandscape, AboutStylePotrait } from '../styles/AboutStyle';
 
 const AboutMe = () => {
+    const [isPotrait, setIsPotrait] = useState(false);
 
+    useEffect(() => {
+        const resizeHandler = () => {
+            if(window.innerHeight > window.innerWidth){
+                setIsPotrait(true);
+            } else {
+                setIsPotrait(false);
+            }
+        }
+        window.addEventListener('resize', resizeHandler);
+        resizeHandler();
+
+        return () => window.removeEventListener('resize', resizeHandler);
+    }, []);
+
+    const AboutStyle = isPotrait ? AboutStylePotrait : AboutStyleLandscape;
     return (
         <AboutStyle>
             <style>
                     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
                 </style>
-            <div>
+            <div className="about-image">
                 <img src={`../static/images/about.png`}></img>
             </div>
             <div>
