@@ -60,6 +60,11 @@ export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>My page title</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
+            </Head>
             <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
             <IndexStyle boxWidth={boxWidth} isVisible={imageLoaded < 36}>
                 <style>

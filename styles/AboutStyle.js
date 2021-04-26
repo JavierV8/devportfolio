@@ -10,8 +10,17 @@ export const AboutStyleLandscape = styled.div`
     .about-text {
         overflow-Y: scroll;
     }
+    .about-image {
+    }
+    .about-image-box {
+        position absolute;
+        left: 8%;
+        width: 60%;
+        height: 50%;
+        bottom: 0;
+    }
     img {
-        width: 30%;
+        width: 100%;
         position: absolute;
         bottom: 0;
         opacity: 0.7
@@ -35,12 +44,13 @@ export const AboutStyleLandscape = styled.div`
     }
     p {
         font-family: 'Montserrat', 'Helvetica';
-        font-size: 1.5vw;
+        font-size: 1.4vw;
         font-weight: 200;
         color: black;
         width: 80%;
         margin: auto;
         margin-top: 1vw;
+        text-align: justify;
     }
 `
 
@@ -60,6 +70,12 @@ export const AboutStylePotrait = styled.div`
         position: fixed;
         width: 100vw;
         left: -5%;
+    }
+    .about-image-box {
+        position relative;
+        width: 100%;
+        bottom: 0%;
+        left: 5%;
     }
     img {
         position: absolute;
