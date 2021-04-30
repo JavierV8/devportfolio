@@ -1,11 +1,13 @@
 import React, {useState, useEffect, useRef} from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router'
 import { AboutStyleLandscape, AboutStylePotrait } from '../styles/AboutStyle';
 
 const AboutMe = () => {
     const imgRef = useRef(null);
     const textRef = useRef(null);
     const [isPotrait, setIsPotrait] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const resizeHandler = () => {
@@ -39,6 +41,7 @@ const AboutMe = () => {
                 </style>
             </Head>
             <AboutStyle>
+                <button className="about-goHome-button" onClick={() => router.push('/')}>Go Home</button>
                 <div className="about-image">
                    <div className="about-image-box"><img src={`../static/images/about.png`} ref={imgRef}></img></div>
                 </div>

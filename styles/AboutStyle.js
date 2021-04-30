@@ -3,6 +3,16 @@ import styled from 'styled-components';
 export const AboutStyleLandscape = styled.div`
     display: flex;
     background-color: #dbdbdb;
+    .about-goHome-button {
+        position: absolute;
+        font-family: 'Montserrat', 'Helvetica';
+        font-size: 1.5vw;
+        font-weight: 300;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5vw;
+    }
     div {
         flex: 1;
         height: 100vh;
