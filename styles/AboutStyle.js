@@ -68,6 +68,8 @@ export const AboutStylePotrait = styled.div`
         position: absolute;
         background: transparent;
     }
+    .about-text {
+    }
     .about-image {
         height: 100vw;
         bottom: -6%;
@@ -86,6 +88,8 @@ export const AboutStylePotrait = styled.div`
         width: 100%;
         z-index: 2;
         opacity: 0.5;
+        transition: all 0.5s cubic-bezier(.51,1.4,.82,1.01);
+        transform: translateX(-100%);
     }
 
     h1 {
