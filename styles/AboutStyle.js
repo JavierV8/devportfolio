@@ -72,6 +72,17 @@ export const AboutStylePotrait = styled.div`
     display: block;
     background-color: #dbdbdb;
     positon: fixed;
+    .about-goHome-button {
+        position: absolute;
+        font-family: 'Montserrat', 'Helvetica';
+        font-size: 4vw;
+        font-weight: 300;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 2vw;
+        z-index: 2;
+    }
     div {
         flex: 1;
         height: 90vh;
