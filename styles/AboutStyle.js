@@ -9,6 +9,8 @@ export const AboutStyleLandscape = styled.div`
     }
     .about-text {
         overflow-Y: scroll;
+        transition: all 0.5s cubic-bezier(.51,1.4,.82,1.01);
+        transform: translateX(100%);
     }
     .about-image {
     }
@@ -20,10 +22,12 @@ export const AboutStyleLandscape = styled.div`
         bottom: 0;
     }
     img {
-        width: 100%;
+        width: 55%;
         position: absolute;
         bottom: 0;
-        opacity: 0.7
+        opacity: 0.7;
+        transition: all 0.5s cubic-bezier(.51,1.4,.82,1.01);
+        transform: translateX(-100%);
     }
 
     h1 {
