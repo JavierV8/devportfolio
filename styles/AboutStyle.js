@@ -80,13 +80,16 @@ export const AboutStylePotrait = styled.div`
     .about-goHome-button {
         position: absolute;
         font-family: 'Montserrat', 'Helvetica';
-        font-size: 4vw;
+        font-size: ${pr => pr.isMobile ? '5vw' : '1vw'};
         font-weight: 300;
-        background: none;
         border: none;
         cursor: pointer;
-        padding: 2vw;
-        z-index: 2;
+        padding: 3vw;
+        bottom: 5%;
+        left: 5%;
+        background: #0066ff;
+        color: white;
+        border-radius: 10%;
     }
     div {
         flex: 1;
