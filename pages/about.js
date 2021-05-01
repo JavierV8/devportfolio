@@ -32,7 +32,7 @@ const AboutMe = () => {
     useEffect(() => {
         setTimeout(() => {
             imgRef.current.style.transform = 'translateX(0%)';
-        }, 100);
+        }, 500);
         const animation = () => {
             setTimeout(() => {
                 imgRef.current.style.transform = 'translateX(0%)';
@@ -57,7 +57,6 @@ const AboutMe = () => {
                 </style>
             </Head>
             <AboutStyle isMobile={isMobile}>
-                <button className="about-goHome-button" onClick={() => router.push('/')}>Go Home</button>
                 <div className="about-image">
                 {!isPotrait && <h1>About Me</h1>}
                    <div className="about-image-box"><img src={`../static/images/about.png`} ref={imgRef}></img></div>
@@ -67,8 +66,8 @@ const AboutMe = () => {
                     <h3>Lorem ipsum odor amet, consectetuer adipiscing elit.</h3>
                     <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Leo montes ridiculus malesuada inceptos; mi orci per senectus magna. Inceptos nec feugiat turpis; neque scelerisque turpis mi. Potenti quam placerat a ex eleifend ridiculus vel mollis. Erat inceptos velit nulla condimentum nec, eu sodales. Aptent suscipit litora torquent fusce et inceptos. Justo urna tempor ullamcorper; turpis donec pellentesque commodo.</p>
                     <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Leo montes ridiculus malesuada inceptos; mi orci per senectus magna. Inceptos nec feugiat turpis; neque scelerisque turpis mi. Potenti quam placerat a ex eleifend ridiculus vel mollis. Erat inceptos velit nulla condimentum nec, eu sodales. Aptent suscipit litora torquent fusce et inceptos. Justo urna tempor ullamcorper; turpis donec pellentesque commodo.</p>
-                
                 </div>
+                <button className="about-goHome-button" onClick={() => router.push('/')}>{'Go Home'}</button>
             </AboutStyle>
         </>
     )

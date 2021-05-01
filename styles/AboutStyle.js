@@ -6,19 +6,26 @@ export const AboutStyleLandscape = styled.div`
     .about-goHome-button {
         position: absolute;
         font-family: 'Montserrat', 'Helvetica';
-        font-size: 1.5vw;
-        font-weight: 300;
-        background: none;
+        font-size: ${pr => pr.isMobile ? '1.5vw' : '1vw'};
+        font-weight: 600;
         border: none;
         cursor: pointer;
-        padding: 0.5vw;
+        padding: 1vw;
+        bottom: 5%;
+        left: 5%;
+        background: #0066ff;
+        color: white;
+        border-radius: 10%;
     }
     div {
+        margin-top: 3vw;
         flex: 1;
         height: 100vh;
     }
     .about-text {
+        margin-right: 3.5vw;
         overflow-Y: scroll;
+        height: ${pr => pr.isMobile ? '70vh' : '85vh'};
     }
     .about-image {
     }
@@ -45,24 +52,24 @@ export const AboutStyleLandscape = styled.div`
         color: black;
         width: 80%;
         margin: auto;
-        margin-top: 5vw;
     }
     h3 {
         font-family: 'Montserrat', 'Helvetica';
         font-size: 2vw;
         font-weight: 200;
-        width: 80%;
-        margin: auto;
+        width: 90%;
+        margin-left: 4.5vw;
     }
     p {
         font-family: 'Montserrat', 'Helvetica';
         font-size: 1.4vw;
         font-weight: 200;
         color: black;
-        width: 80%;
+        width: 88%;
         margin: auto;
         margin-top: 1vw;
         text-align: justify;
+        margin-left: 4.5vw;
     }
 `
 
