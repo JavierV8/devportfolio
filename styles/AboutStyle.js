@@ -19,8 +19,6 @@ export const AboutStyleLandscape = styled.div`
     }
     .about-text {
         overflow-Y: scroll;
-        transition: all 0.5s cubic-bezier(.51,1.4,.82,1.01);
-        transform: translateX(100%);
     }
     .about-image {
     }
@@ -32,7 +30,7 @@ export const AboutStyleLandscape = styled.div`
         bottom: 0;
     }
     img {
-        width: 55%;
+        width: ${pr => pr.isMobile ? '45%' : '55%'};
         position: absolute;
         bottom: 0;
         opacity: 0.7;
