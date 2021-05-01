@@ -8,6 +8,7 @@ const AboutMe = () => {
     const textRef = useRef(null);
     const [isPotrait, setIsPotrait] = useState(false);
     const router = useRouter();
+    const [isPortraid, setIsportraid] = useState(false);
 
     useEffect(() => {
         const resizeHandler = () => {
@@ -28,8 +29,26 @@ const AboutMe = () => {
             imgRef.current.style.transform = 'translateX(0%)';
             textRef.current.style.transform = 'translateX(0%)';
         }, 100);
+        const animation = () => {
+            setTimeout(() => {
+                imgRef.current.style.transform = 'translateX(0%)';
+                textRef.current.style.transform = 'translateX(0%)';
+            }, 600);
+        }
+        const resizeHandler = () => {
+            const isLandscape = window.innerWidth > window.innerHeight;
+            setIsportraid(isLandscape);
+        }
 
-    }, []);
+        window.addEventListener("orientationchange", animation);
+        window.addEventListener("resize", resizeHandler);
+
+        return () => {
+            window.removeEventListener("orientationchange", animation);
+            window.removeEventListener("resize", resizeHandler);
+        }
+
+    }, [isPortraid]);
 
     const AboutStyle = isPotrait ? AboutStylePotrait : AboutStyleLandscape;
     return (
