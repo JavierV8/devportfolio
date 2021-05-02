@@ -1,10 +1,14 @@
 import React from 'react';
+import { ProjectsStyle } from '../styles/porjectsStyle';
+import ProjectCard from '../components/ProjectCard';
+
 
 const Projects = () => {
     return (
-        <div>
+        <ProjectsStyle>
             <h1>Projects</h1>
-        </div>
+            <ProjectCard />
+        </ProjectsStyle>
     );
 };
 
