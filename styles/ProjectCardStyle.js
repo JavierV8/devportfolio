@@ -7,6 +7,8 @@ export const ProjectCardStyle = styled.div`
     height: 35vw;
     margin: auto;
     margin-bottom: 2vw;
+    border-radius: 2%;
+    overflow: hidden;
 
     @media only screen and (max-width : 1050px) {
         width: 32%;
@@ -20,5 +22,9 @@ export const ProjectCardStyle = styled.div`
         min-width: 48%;
         max-width: 48%;
         height: 65vw;
+    }
+
+    img {
+        width: 100%;
     }
 `
