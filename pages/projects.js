@@ -8,12 +8,12 @@ const Projects = () => {
         <div>
             <h1>Projects</h1>
         <ProjectsStyle>
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            <ProjectCard image='canvas' />
+            <ProjectCard image='hooks' />
+            <ProjectCard image='image' />
+            <ProjectCard image='movieApp' />
+            <ProjectCard image='puzzle' />
+            <ProjectCard image='storeApp' />
         </ProjectsStyle>
         </div>
 
