@@ -6,7 +6,11 @@ import ProjectCard from '../components/ProjectCard';
 const Projects = () => {
     return (
         <ProjectsStyle>
-            <h1>Projects</h1>
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
             <ProjectCard />
         </ProjectsStyle>
     );
