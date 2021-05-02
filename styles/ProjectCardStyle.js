@@ -20,13 +20,6 @@ export const ProjectCardStyle = styled.div`
         height: 100%;
     }
 
-    @media only screen and (max-width : 650px) {
-        width: 48%;
-        min-width: 48%;
-        max-width: 48%;
-        height: 100%;
-    }
-
     img {
         width: 100%;
     }
@@ -68,6 +61,35 @@ export const ProjectCardStyle = styled.div`
         button {
             font-size: 1.5vh;
             padding: 0.8vh;
+        }
+        .project-card-button-github {
+            left: 8vh;
+        }
+    }
+
+    @media only screen and (max-width : 1050px) {
+        width: 48%;
+        min-width: 48%;
+        max-width: 48%;
+        height: 100%;
+    }
+    @media only screen and (max-width : 450px) {
+        width: 85%;
+        min-width: 85%;
+        max-width: 85%;
+        height: 100%;
+        h4{
+            margin-top: 0%;
+            margin-left: 1.2vh;
+            font-size: 2vh;
+        }
+        p{
+            margin-left: 1.2vh;
+            font-size: 1.9vh;
+        }
+        button {
+            font-size: 2vh;
+            padding: 1.5vh;
         }
         .project-card-button-github {
             left: 8vh;

@@ -97,7 +97,7 @@ export default function Home() {
                 <p>GitHUb</p>
                 <p>Email</p>
                 <button className="index-button" onClick={() => router.push('/about')}>about me</button>
-                <button className="index-button live">live projects</button>
+                <button className="index-button live" onClick={() => router.push('/projects')}>live projects</button>
             </div>
             </IndexStyle>
         </>
