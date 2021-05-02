@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ProjectsStyle = styled.div`
-    border: 1px solid red;
     width: 80%;
     margin: auto;
     display: flex;
