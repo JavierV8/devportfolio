@@ -9,6 +9,7 @@ export const ProjectCardStyle = styled.div`
     margin-bottom: 2vw;
     border-radius: 2%;
     overflow: hidden;
+    position: relative;
 
     @media only screen and (max-width : 1050px) {
         width: 32%;
@@ -26,5 +27,29 @@ export const ProjectCardStyle = styled.div`
 
     img {
         width: 100%;
+    }
+    h4{
+        margin-top: 0%;
+        margin-left: 1vw;
+        font-size: 1.1vw;
+    }
+    p{
+        margin-left: 1vw;
+        font-size: 1vw;
+    }
+    button {
+        position: absolute;
+        bottom: 5%;
+        font-size: 1.2vw;
+        padding: 0.5vw;
+        border: none;
+        border-radius: 9%;
+        background: #0066ff;
+        color: white;
+        left: 1vw;
+        cursor: pointer;
+    }
+    .project-card-button-github {
+        left: 9vw;
     }
 `
