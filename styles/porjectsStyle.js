@@ -32,4 +32,25 @@ export const ProjectsStyle = styled.div`
     @media only screen and (max-width : 600px) {
         width: 100%;
     }
+
+    @media screen and (orientation:portrait) {
+        h1 {
+            width: 100%;
+            font-size: 3vh;
+        }
+        .projects-goHome-button {
+            position: fixed;
+            font-family: 'Montserrat', 'Helvetica';
+            font-size: ${pr => pr.isMobile ? '3vh' : '2vh'};
+            font-weight: 100;
+            border: none;
+            cursor: pointer;
+            padding: 1.5vh;
+            bottom: 5%;
+            left: 5%;
+            background: #0066ff;
+            color: white;
+            border-radius: 10%;
+        }
+    }
 `
