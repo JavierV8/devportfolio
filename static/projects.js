@@ -54,6 +54,14 @@ export const projects = [
         "image": "web.png",
         "demo_url": "",
         "gitHub_url": "https://github.com/JavierV8/devportfolio"
+    },
+    {
+        "title": "Matress Store",
+        "subtitle": "Html, JavasScript, css",
+        "text": "Lorem ipsum odor amet, consectetuer adipiscing elit. Leo montes ridiculus malesuada inceptos; mi orci per senectus magna. Inceptos nec feugiat turpis; neque scelerisque turpis mi. Potenti quam placerat a ex eleifend ridiculus vel mollis. Erat inceptos velit nulla condimentum nec, eu sodales. Aptent suscipit litora torquent fusce et inceptos. Justo urna tempor ullamcorper; turpis donec pellentesque commodo.",
+        "image": "mattressStore.png",
+        "demo_url": "https://mattress-store-c4c36.web.app/#/",
+        "gitHub_url": "https://github.com/JavierV8/mattress-store"
     }
     
 ]
