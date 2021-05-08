@@ -8,8 +8,8 @@ const ProjectCard = props => {
             <img src={`../static/images/${image}`}></img>
             <h4>{subtitle}</h4>
             <p>{text}</p>
-            <button>Live Demo</button>
-            <button className="project-card-button-github">GitHub</button>
+            <button onClick={() => window.open(demo_url)}>Live Demo</button>
+            <button className="project-card-button-github" onClick={() => window.open(gitHub_url)}>GitHub</button>
         </ProjectCardStyle>
     )
 }
