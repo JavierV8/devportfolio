@@ -10,6 +10,10 @@ export const ProjectsStyle = styled.div`
         width: 100%;
         font-size: 3vw;
     }
+    h4 {
+        width: 100%;
+        font-size: 3vh; 
+    }
     .projects-goHome-button {
         position: fixed;
         font-family: 'Montserrat', 'Helvetica';
@@ -37,6 +41,10 @@ export const ProjectsStyle = styled.div`
         h1 {
             width: 100%;
             font-size: 3vh;
+        }
+        h4 {
+            width: 100%;
+            font-size: 1.3vh; 
         }
         .projects-goHome-button {
             position: fixed;

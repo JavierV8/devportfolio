@@ -63,13 +63,9 @@ export default function Home() {
             <Head>
                 <title>My page title</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
             </Head>
             <LoadingIndexPageStyle isVisible={imageLoaded < 36}><div>Loading...</div></LoadingIndexPageStyle>
             <IndexStyle boxWidth={boxWidth} isVisible={imageLoaded < 36}>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
-                </style>
                 <div className="index-face-box" ref={faceBox}>{images}</div>
                 <div className="index-text-box" id="index-tex-tbox-id">
                 <div className="index-text-1">Hi Im</div>

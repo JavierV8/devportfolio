@@ -18,6 +18,7 @@ const Projects = () => {
     return (
         <ProjectsStyle>
         <h1>Projects</h1>
+        <h4>The following demostrations are those that i have deployed, so you can check them in live:</h4>
             {pro}
             <button className="projects-goHome-button" onClick={() => router.push('/')}>{'Go Home'}</button>
         </ProjectsStyle>
