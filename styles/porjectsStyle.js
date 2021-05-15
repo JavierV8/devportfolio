@@ -24,7 +24,7 @@ export const ProjectsStyle = styled.div`
         padding: 1vw;
         bottom: 5%;
         left: 5%;
-        background: #0066ff;
+        background: #990000;
         color: white;
         border-radius: 10%;
     }
@@ -41,10 +41,12 @@ export const ProjectsStyle = styled.div`
         h1 {
             width: 100%;
             font-size: 3vh;
+            margin-left: 7%;
         }
         h4 {
             width: 100%;
-            font-size: 1.3vh; 
+            font-size: 1.8vh; 
+            margin-left: 7%;
         }
         .projects-goHome-button {
             position: fixed;
@@ -56,7 +58,7 @@ export const ProjectsStyle = styled.div`
             padding: 1.5vh;
             bottom: 5%;
             left: 5%;
-            background: #0066ff;
+            background: #990000;
             color: white;
             border-radius: 10%;
         }

@@ -61,6 +61,8 @@ export const ProjectCardStyle = styled.div`
         button {
             font-size: 1.5vh;
             padding: 0.8vh;
+            margin-bottom: 2vw;
+            margin-left: 2vw;
         }
         .project-card-button-github {
             left: 8vh;
