@@ -90,7 +90,7 @@ export const IndexStyleLandscape = styled.div`
         font-weight: 600;
     }
     .index-button {
-        margin-top: ${pr => pr.boxWidth * 0.08}px;
+        margin-top: ${pr => pr.boxWidth * 0.12}px;
         font-size: ${pr => pr.boxWidth * 0.035}px;
         font-weight: 100;
         background: #0066ff;
@@ -102,6 +102,9 @@ export const IndexStyleLandscape = styled.div`
     }
     .live {
         margin-left: ${pr => pr.boxWidth * 0.03}px;
+    }
+    .index-links {
+        display: flex;
     }
     .index-github {
         width: ${pr => pr.boxWidth * 0.15}px;
@@ -124,6 +127,13 @@ export const IndexStyleLandscape = styled.div`
         height: ${pr => pr.boxWidth * 0.13}px;
         padding: 0
         margin: 0;
+    }
+    .index-codeSandBox-img {
+        width: ${pr => pr.boxWidth * 0.085}px;
+        height: ${pr => pr.boxWidth * 0.085}px;
+        padding: 0
+        margin: 0;
+        margin-top: 15%;
     }
     
     
@@ -158,6 +168,9 @@ export const IndexStylePotrait = styled.div`
                 width: 100vh;
                 height: 100vh;
                 opacity: 0.2;
+                position: relative;
+                left: -5%;
+                top: 15%;
         }
             .imageCara {
                 margin-bottom: -5px;
@@ -173,12 +186,12 @@ export const IndexStylePotrait = styled.div`
         }
     
         .index-text-1 {
-                margin-top: 15vh;
+                margin-top: 10vh;
                 font-size:  8vw;
                 font-weight: 300;
         }
         .index-text-2 {
-                margin-top: 10vw;
+                margin-top: 1vw;
                 font-size: 13vw;
                 font-weight: bold;
                 font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -187,8 +200,8 @@ export const IndexStylePotrait = styled.div`
         }
         .index-text-3 {
                 width: 95vw;
-                margin-top: 20vw;
-                font-size: 6vw;
+                margin-top: 1vw;
+                font-size: 7vw;
                 line-height: 1.1;
                 font-weight: 300;
         }
@@ -207,37 +220,56 @@ export const IndexStylePotrait = styled.div`
                 padding: 3vw;
                 color: white;
                 cursor: pointer;
+                z-index: 1;
         }
         .live {
                 left: 40vw;
         }
+        .index-links {
+            display: flex;
+        }
         .index-github {
-            width: ${pr => pr.boxWidth * 0.15}px;
-            height: ${pr => pr.boxWidth * 0.15}px;
+            width: ${pr => pr.boxWidth * 0.1}px;
+            height: ${pr => pr.boxWidth * 0.1}px;
             position: relative;
             text-align: center;
             cursor: pointer;
         }
         .index-info {
-            font-size: ${pr => pr.boxWidth * 0.025}px;
+            font-size: ${pr => pr.boxWidth * 0.015}px;
             font-weight: bold;
             padding: 0;
             margin: 0;
             position: absolute;
             bottom: 0%;
-            width: ${pr => pr.boxWidth * 0.15}px;
+            width: ${pr => pr.boxWidth * 0.1}px;
         }
         .index-github-img {
-            width: ${pr => pr.boxWidth * 0.13}px;
-            height: ${pr => pr.boxWidth * 0.13}px;
+            width: ${pr => pr.boxWidth * 0.1}px;
+            height: ${pr => pr.boxWidth * 0.1}px;
             padding: 0
             margin: 0;
+        }
+        .index-codeSandBox-img {
+            width: ${pr => pr.boxWidth * 0.065}px;
+            height: ${pr => pr.boxWidth * 0.065}px;
+            padding: 0
+            margin: 0;
+            margin-top: 15%;
+        }
+        .index-portrait-bar {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 11vh;
+            background #383838;
+            display: none;
         }
 
 
 
         .carousel-word {
-                height: 9vw;
+                height: 18vw;
                 font-size: 4vw;
                 overflow: hidden;
         }

@@ -73,14 +73,21 @@ export default function Home() {
                 <div className="index-text-3">
                     Passionate about information technologies and Self-learning software engineering.
                 </div>
-
-                <div className="index-github" onClick={() => window.open("https://github.com/JavierV8")}>
-                    <img alt="img" className="index-github-img" src={`../static/images/github.png`} />
-                    <p className="index-info">GitHub</p>
+                <div className="index-links">
+                    <div className="index-github" onClick={() => window.open("https://github.com/JavierV8")}>
+                        <img alt="img" className="index-github-img" src={`../static/images/github.png`} />
+                        <p className="index-info">GitHub</p>
+                    </div>
+                    <div className="index-github" onClick={() => window.open("https://codesandbox.io/u/JavierV8")}>
+                        <img alt="img" className="index-codeSandBox-img" src={`../static/images/codesandbox.png`} />
+                        <p className="index-info">CodeSandbox</p>
+                    </div>
                 </div>
+               
                 <button className="index-button" onClick={() => router.push('/about')}>about me</button>
                 <button className="index-button live" onClick={() => router.push('/projects')}>live projects</button>
             </div>
+            <div className="index-portrait-bar"></div>
             </IndexStyle>
         </>
     )
