@@ -72,11 +72,11 @@ export const IndexStyleLandscape = styled.div`
         font-weight: 300;
     }
     .index-text-2 {
-        font-size: ${pr => pr.boxWidth * 0.13}px;
+        font-size: ${pr => pr.boxWidth * 0.11}px;
         font-weight: bold;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        height: ${pr => pr.boxWidth * 0.15}px;
+        height: ${pr => pr.boxWidth * 0.13}px;
     }
     .index-text-3 {
         width: 90%;
@@ -102,6 +102,28 @@ export const IndexStyleLandscape = styled.div`
     }
     .live {
         margin-left: ${pr => pr.boxWidth * 0.03}px;
+    }
+    .index-github {
+        width: ${pr => pr.boxWidth * 0.15}px;
+        height: ${pr => pr.boxWidth * 0.15}px;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+    }
+    .index-info {
+        font-size: ${pr => pr.boxWidth * 0.025}px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 0%;
+        width: ${pr => pr.boxWidth * 0.15}px;
+    }
+    .index-github-img {
+        width: ${pr => pr.boxWidth * 0.13}px;
+        height: ${pr => pr.boxWidth * 0.13}px;
+        padding: 0
+        margin: 0;
     }
     
     

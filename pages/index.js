@@ -90,8 +90,10 @@ export default function Home() {
                         cursorChar="|"
                     />
                 </div>
-                <p>GitHUb</p>
-                <p>Email</p>
+                <div className="index-github" onClick={() => window.open("https://github.com/JavierV8")}>
+                    <img alt="img" className="index-github-img" src={`../static/images/github.png`} />
+                    <p className="index-info">GitHub</p>
+                </div>
                 <button className="index-button" onClick={() => router.push('/about')}>about me</button>
                 <button className="index-button live" onClick={() => router.push('/projects')}>live projects</button>
             </div>
