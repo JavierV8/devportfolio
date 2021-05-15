@@ -74,22 +74,7 @@ export default function Home() {
                 <div className="index-text-3">
                     Passionate about information technologies and Self-learning software engineering.
                 </div>
-                <div className="index-text-4">
-                    <Typed
-                        loop
-                        typeSpeed={80}
-                        backSpeed={10}
-                        strings={["Front-End thenclogies JavaScript | React | CSS | HTML", "Back-End techncoligies NodeJS | Express | NOSQL | SQL", "DevTools"]}
-                        smartBackspace
-                        shuffle={false}
-                        backDelay={5000}
-                        fadeOut={false}
-                        fadeOutDelay={100}
-                        loopCount={0}
-                        showCursor
-                        cursorChar="|"
-                    />
-                </div>
+
                 <div className="index-github" onClick={() => window.open("https://github.com/JavierV8")}>
                     <img alt="img" className="index-github-img" src={`../static/images/github.png`} />
                     <p className="index-info">GitHub</p>

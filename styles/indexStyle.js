@@ -157,7 +157,7 @@ export const IndexStylePotrait = styled.div`
         .index-face-box {
                 width: 100vh;
                 height: 100vh;
-                opacity: 0.4;
+                opacity: 0.2;
         }
             .imageCara {
                 margin-bottom: -5px;
@@ -211,6 +211,31 @@ export const IndexStylePotrait = styled.div`
         .live {
                 left: 40vw;
         }
+        .index-github {
+            width: ${pr => pr.boxWidth * 0.15}px;
+            height: ${pr => pr.boxWidth * 0.15}px;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+        }
+        .index-info {
+            font-size: ${pr => pr.boxWidth * 0.025}px;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            bottom: 0%;
+            width: ${pr => pr.boxWidth * 0.15}px;
+        }
+        .index-github-img {
+            width: ${pr => pr.boxWidth * 0.13}px;
+            height: ${pr => pr.boxWidth * 0.13}px;
+            padding: 0
+            margin: 0;
+        }
+
+
+
         .carousel-word {
                 height: 9vw;
                 font-size: 4vw;
