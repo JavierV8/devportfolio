@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React, { useState, useEffect, useRef } from 'react';
-import Typed from 'react-typed';
 import { useRouter } from 'next/router'
 import Word_Carousel from '../components/Word_Carousel';
 import { LoadingIndexPageStyle, IndexStyleLandscape, IndexStylePotrait } from '../styles/indexStyle';
