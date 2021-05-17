@@ -85,7 +85,6 @@ export default function Home() {
                 </div>
                
                 <button className="index-button" onClick={() => router.push('/about')}>about me</button>
-                <button className="index-button live" onClick={() => router.push('/projects')}>live projects</button>
             </div>
             <div className="index-portrait-bar"></div>
             </IndexStyle>

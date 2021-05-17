@@ -33,8 +33,8 @@ export const projects = [
     },
     {
         "title": "Real Time Data Monitoring",
-        "subtitle": "ES6 | Arduino | C++ | MQTT | WebSockets | Chart.js | Bootstrap",
-        "text": "This is a Demo for monitoring data from an Arduino that send the temperature and humidity from a sensor conected to it. The data is sending to a NodeJS server through MQTT. The client that represent the data in a web APP in a very beatufully way is conected to the server by websockets so it allow to show the data in real time.",
+        "subtitle": "ES6 | Arduino | C++ | MQTT | WebSockets | Chart.js",
+        "text": "This is a Demo for monitoring data from an Arduino that send the temperature and humidity. The data is sending to a NodeJS server through MQTT. The client that represent the data in a web APP is conected to the server by websockets.",
         "image": "dataMonitoring.png",
         "demo_url": "https://real-time-data-monitoring.web.app/",
         "gitHub_url": "https://github.com/JavierV8/Real-time-data-monitoring"

@@ -26,7 +26,7 @@ export const ProjectCardStyle = styled.div`
     h4{
         margin-top: 0%;
         margin-left: 1vw;
-        font-size: 1.1vw;
+        font-size: 0.9vw;
     }
     p{
         margin-left: 1vw;
@@ -45,7 +45,7 @@ export const ProjectCardStyle = styled.div`
         margin-top: 1vw;
     }
     .project-card-button-github {
-        left: 9vw;
+        left: 8vw;
     }
 
     @media screen and (orientation:portrait) {
@@ -74,6 +74,7 @@ export const ProjectCardStyle = styled.div`
         min-width: 48%;
         max-width: 48%;
         height: 100%;
+        height: 55vw;
     }
     @media only screen and (max-width : 450px) {
         width: 85%;

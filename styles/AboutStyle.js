@@ -4,18 +4,20 @@ export const AboutStyleLandscape = styled.div`
     display: flex;
     background-color: #dbdbdb;
     .about-goHome-button {
-        position: absolute;
-        font-family: 'Montserrat', 'Helvetica';
-        font-size: ${pr => pr.isMobile ? '1.5vw' : '1vw'};
-        font-weight: 600;
-        border: none;
-        cursor: pointer;
-        padding: 1vw;
-        bottom: 5%;
+
         left: 5%;
+
+        position: fixed;
+        bottom: 5vh;
+        font-size: 2vw;
+        border-radius: 1vw;
+        font-weight: 100;
         background: #0066ff;
+        border: none;
+        padding: 1.5vw;
         color: white;
-        border-radius: 10%;
+        cursor: pointer;
+        z-index: 1;
     }
     div {
         margin-top: 3vw;
@@ -78,18 +80,19 @@ export const AboutStylePotrait = styled.div`
     background-color: #dbdbdb;
     positon: fixed;
     .about-goHome-button {
-        position: absolute;
-        font-family: 'Montserrat', 'Helvetica';
-        font-size: ${pr => pr.isMobile ? '5vw' : '1vw'};
-        font-weight: 300;
-        border: none;
-        cursor: pointer;
-        padding: 3vw;
-        bottom: 5%;
         left: 5%;
+
+        position: fixed;
+        bottom: 5vh;
+        font-size: 5vw;
+        border-radius: 1.5vw;
+        font-weight: 100;
         background: #0066ff;
+        border: none;
+        padding: 3vw;
         color: white;
-        border-radius: 10%;
+        cursor: pointer;
+        z-index: 1;
     }
     div {
         flex: 1;

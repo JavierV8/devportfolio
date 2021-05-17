@@ -70,6 +70,12 @@ export const IndexStyleLandscape = styled.div`
         margin-top: ${pr => pr.boxWidth * 0.05}px;
         font-size:  ${pr => pr.boxWidth * 0.05}px;
         font-weight: 300;
+
+        font-size: ${pr => pr.boxWidth * 0.09}px;
+        font-weight: 300;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        height: ${pr => pr.boxWidth * 0.1}px;
     }
     .index-text-2 {
         font-size: ${pr => pr.boxWidth * 0.11}px;
@@ -167,7 +173,7 @@ export const IndexStylePotrait = styled.div`
         .index-face-box {
                 width: 100vh;
                 height: 100vh;
-                opacity: 0.2;
+                opacity: 0.3;
                 position: relative;
                 left: -5%;
                 top: 15%;
@@ -189,14 +195,22 @@ export const IndexStylePotrait = styled.div`
                 margin-top: 10vh;
                 font-size:  8vw;
                 font-weight: 300;
+
+                margin-top: 10vh;
+                font-size: 11vw;
+                font-weight: 300;
+                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+                Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                height: 10vw;
         }
         .index-text-2 {
-                margin-top: 1vw;
                 font-size: 13vw;
                 font-weight: bold;
                 font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
                 Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-                height: 15vw;
+                height: 13vw;
+                margin: 0;
+                padding: 0;
         }
         .index-text-3 {
                 width: 95vw;
@@ -270,7 +284,7 @@ export const IndexStylePotrait = styled.div`
 
         .carousel-word {
                 height: 18vw;
-                font-size: 4vw;
+                font-size: 4.5vw;
                 overflow: hidden;
         }
             
