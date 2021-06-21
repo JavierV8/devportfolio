@@ -82,6 +82,10 @@ export default function Home() {
                         <img alt="img" className="index-codeSandBox-img" src={`../static/images/codesandbox.png`} />
                         <p className="index-info">CodeSandbox</p>
                     </div>
+                    <div className="index-github" onClick={() => window.open("https://codesandbox.io/u/JavierV8")}>
+                        <img alt="img" className="index-codeSandBox-img" src={`../static/images/codesandbox.png`} />
+                        <p className="index-info">GitBook</p>
+                    </div>
                 </div>
                
                 <button className="index-button" onClick={() => router.push('/about')}>about me</button>
